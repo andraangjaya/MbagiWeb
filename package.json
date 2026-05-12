@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "concurrently \"npm:tw:watch\" \"npm:serve\"",
+    "build": "npm run tw:build && ng build",
+    "serve": "ng serve",
+    "tw:build": "tailwindcss -i ./src/input.css -o ./src/output.css",
+    "tw:watch": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -17,8 +20,6 @@
     "@angular/forms": "^21.2.0",
     "@angular/platform-browser": "^21.2.0",
     "@angular/router": "^21.2.0",
-    "@tailwindcss/postcss": "^4.3.0",
-    "postcss": "^8.5.14",
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.3.0",
     "tslib": "^2.3.0"
@@ -27,6 +28,8 @@
     "@angular/build": "^21.2.10",
     "@angular/cli": "^21.2.10",
     "@angular/compiler-cli": "^21.2.0",
+    "@tailwindcss/cli": "^4.3.0",
+    "concurrently": "^9.2.1",
     "jsdom": "^28.0.0",
     "prettier": "^3.8.1",
     "typescript": "~5.9.2",
