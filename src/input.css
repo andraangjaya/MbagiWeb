@@ -7,4 +7,10 @@
   --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-jakarta: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-manrope: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --color-mbagi-forest: #14532d;
+  --color-mbagi-surface: #e9e9e2;
+  --color-mbagi-ink: #1c1917;
+  --color-mbagi-muted: #78716c;
+  --color-mbagi-line: #d6d3cd;
 }
