@@ -17,7 +17,7 @@ export const routes: Routes = [
   },
 
   {
-    path: 'signup',
+    path: 'sign-up',
     loadComponent: () => import('./pages/sign-up-page/sign-up-page.component').then((m) => m.SignUpPageComponent),
   },
 
@@ -27,7 +27,7 @@ export const routes: Routes = [
   },
 
   {
-    path: 'discoverfood',
+    path: 'discover-food',
     loadComponent: () => import('./pages/discover-food-page/discover-food-page.component').then((m) => m.DiscoverFoodPageComponent),
   },
 

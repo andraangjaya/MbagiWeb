@@ -1,1 +1,26 @@
-<p>navbar.component works!</p>
+<div class="flex items-center justify-between bg-[#2D6A4F] px-8 py-4">
+
+  <div class="flex flex-1 gap-8">
+    <div routerLink="/home" class="text-white font-semibold cursor-pointer" >Home</div>
+    <div routerLink="/discover-food" class="text-white font-semibold cursor-pointer">Discover Food</div>
+    <div routerLink="/user/dashboard" class="text-white font-semibold cursor-pointer">Dashboard</div>
+    <div routerLink="" class="text-white font-semibold cursor-pointer">Contact Us</div>
+  </div>
+
+  <div class="flex flex-1 justify-center">
+    <div routerLink="/home" class="text-white font-extrabold text-3xl cursor-pointer">
+      Mbagi
+    </div>
+  </div>
+
+  <div class="flex flex-1 justify-end items-center gap-6">
+    <div routerLink="/login" class="text-white font-semibold cursor-pointer">
+      Login
+    </div>
+
+    <div routerLink="/sign-up" class="bg-white text-[#2D6A4F] px-5 py-2 rounded-xl font-semibold cursor-pointer">
+      Sign Up
+    </div>
+  </div>
+
+</div>
