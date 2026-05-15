@@ -7,4 +7,28 @@
   --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-jakarta: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-manrope: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --animate-marquee: marquee 20s linear infinite;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@layer components {
+  .hero-action {
+    @apply inline-flex items-center justify-center rounded-full px-10 py-5 text-xl font-bold text-white;
+  }
+
+  .hero-action--solid {
+    @apply bg-[#2D6A4F];
+  }
+
+  .hero-action--ghost {
+    @apply border-2 border-white/30 bg-white/10 backdrop-blur-[6px];
+  }
 }

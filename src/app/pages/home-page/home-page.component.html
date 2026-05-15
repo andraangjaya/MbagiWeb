@@ -1,0 +1,232 @@
+<div class="relative">
+  <img
+    src="/images/home-banner.png"
+    class="h-[70vh] min-h-[520px] w-full object-cover md:h-auto md:min-h-0 md:aspect-video"
+    alt="banner"
+  >
+  <div
+    class="absolute inset-0 flex flex-col items-center justify-center gap-6 bg-[linear-gradient(180deg,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0.5)_71.86%,var(--color-neutral-50)_100%)] px-6 sm:px-10 lg:gap-10">
+    <div class="max-w-5xl text-center text-4xl font-extrabold text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">Cara cerdas untuk menyelamatkan makanan.</div>
+    <div class="flex flex-col gap-4 sm:flex-row sm:gap-6 lg:gap-8">
+      @for (action of heroActions; track action.label) {
+        <a
+          [routerLink]="action.route"
+          class="hero-action"
+          [class.hero-action--solid]="action.variant === 'solid'"
+          [class.hero-action--ghost]="action.variant === 'ghost'">
+          {{ action.label }}
+        </a>
+      }
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-col items-center gap-5 px-6 py-12 sm:px-10 lg:px-32 xl:px-65 xl:py-15">
+  <div class="text-center text-2xl font-medium text-[#285A48] sm:text-3xl">
+    Misi Mbagi adalah memberdayakan komunitas agar bersatu memimpin gerakan di Indonesia dalam memerangi pemborosan
+    pangan sebagai solusi nyata bagi kebaikan bangsa.
+  </div>
+  <div class="text-center text-base font-extralight text-[#949494] font-manrope sm:text-lg lg:text-xl">
+    Website kami adalah pasar makanan berlebih terbesar di Indonesia. Kami membantu pengguna menyelamatkan makanan
+    berkualitas agar tidak terbuang sia-sia
+  </div>
+</div>
+
+<div class="flex flex-col items-center gap-5 px-6 py-12 sm:px-10 lg:px-32 xl:px-65 xl:py-15">
+  <div class="text-center text-4xl font-extrabold text-[#285A48] sm:text-5xl lg:text-6xl">Mengapa Menggunakan Mbagi?</div>
+  <div class="text-center text-base font-light text-[#7E9C91] sm:text-lg lg:text-xl">Bergabung dengan ekosistem kami berarti berkontribusi pada
+    masa depan yang lebih hijau dan masyarakat yang lebih peduli satu sama lain.
+  </div>
+</div>
+
+<div class="flex flex-col gap-10 px-6 py-8 sm:px-10 lg:flex-row lg:px-24 xl:px-40 xl:py-10">
+  @for (card of highlights; track card.title) {
+    <div class="flex flex-1 flex-col items-center gap-6 lg:gap-8">
+      <img
+        [src]="card.image"
+        class="h-auto w-full max-w-md rounded-t-4xl object-cover"
+        [alt]="card.alt"
+      >
+      <div class="text-center text-xl font-bold text-[#313131]">
+        {{ card.title }}
+      </div>
+      <div class="text-md text-center font-regular font-manrope text-[#404943]">
+        {{ card.description }}
+      </div>
+      <div class="mt-auto py-8">
+        <a [routerLink]="card.route"
+           class="text-center text-white text-lg font-bold font-manrope bg-[#285A48] rounded-3xl px-20 py-3">
+          Get Started
+        </a>
+      </div>
+    </div>
+  }
+</div>
+
+<div class="overflow-hidden bg-[#285A48] py-4">
+  <div class="flex w-max flex-nowrap gap-5 animate-marquee">
+    @for (item of loopSlogans; track $index) {
+      <div class="shrink-0 whitespace-nowrap text-2xl font-extrabold text-white sm:text-3xl">
+        {{ item }}
+      </div>
+    }
+  </div>
+</div>
+
+<div class="flex flex-col items-center gap-0.5 bg-[#2D6A4F] px-6 py-16 sm:px-10 lg:px-32 xl:px-110 xl:py-25">
+  <div class="text-center text-3xl font-extrabold text-white sm:text-4xl">
+    Langkah Baru :
+  </div>
+  <div class="text-center text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
+    Untuk Berbagi
+  </div>
+  <div class="py-5 text-center text-base font-light text-[#A9BDB6] font-manrope sm:text-lg lg:text-xl">
+    Hanya butuh beberapa menit untuk mulai membuat perubahan besar bagi bumi dan sesama.
+  </div>
+</div>
+
+<div class="flex flex-col items-center bg-[#2D6A4F] px-6 py-10 pb-16 sm:px-10 lg:px-20 xl:px-30 xl:pb-20">
+  <div class="text-center text-5xl font-extrabold text-white sm:text-6xl lg:text-7xl">Ikut</div>
+  <div class="text-center text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
+    <div>Ribuan Pengguna</div>
+    <div>untuk Mem-bagi</div>
+  </div>
+  <div class="w-full py-10 sm:py-12 lg:py-15">
+    <img
+      src="/images/join-mbagi.png"
+      class="mx-auto h-auto w-full max-w-5xl"
+      alt="join-mbagi"
+    >
+  </div>
+  <a routerLink="" class="rounded-full bg-white px-10 py-4 text-lg font-bold text-[#2D6A4F] sm:px-14 sm:text-xl lg:px-20 lg:py-5">
+    Mulai Berbagi
+  </a>
+</div>
+
+<div class="px-6 py-10 sm:px-10 lg:p-15">
+  <div class="flex flex-col">
+    <div class="text-4xl font-bold text-[#285A48] -skew-x-8 sm:text-5xl lg:text-6xl">Sederhana untuk</div>
+    <div class="text-4xl font-bold text-[#285A48] sm:text-5xl lg:text-6xl">Semua pihak</div>
+    <div class="mt-8 flex flex-col items-stretch rounded-4xl border border-[#DEDEDE] bg-[#FBF5EF] px-6 sm:px-8 lg:mt-10 lg:flex-row lg:px-10">
+      @for (step of howItWorks; track step.number; let isLast = $last) {
+        <div class="flex flex-1 flex-col gap-4 py-8 lg:px-12 lg:py-10">
+          <div class="pb-8 text-2xl text-[#285A48] font-regular lg:pb-15">{{ step.number }}</div>
+          @switch (step.icon) {
+            @case ('bag') {
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-5">
+                <rect width="60" height="60" rx="16" fill="#E8E9E1"/>
+                <path
+                  d="M18 25.5H42L40.7475 39.2715C40.6798 40.0169 40.3359 40.71 39.7833 41.2148C39.2307 41.7197 38.5094 41.9997 37.761 42H22.239C21.4906 41.9997 20.7693 41.7197 20.2167 41.2148C19.6641 40.71 19.3202 40.0169 19.2525 39.2715L18 25.5Z"
+                  stroke="#0F5238" stroke-width="3" stroke-linejoin="round"/>
+                <path
+                  d="M24 28.5V24C24 22.4087 24.6321 20.8826 25.7574 19.7574C26.8826 18.6321 28.4087 18 30 18C31.5913 18 33.1174 18.6321 34.2426 19.7574C35.3679 20.8826 36 22.4087 36 24V28.5"
+                  stroke="#0F5238" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            }
+            @case ('pin') {
+              <svg width="55" height="60" viewBox="0 0 55 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-5">
+                <rect width="54.6667" height="59.8134" rx="16" fill="#E8E9E1"/>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M26.4723 41.4897C26.4723 41.4897 18 34.3543 18 27.3333C18 24.858 18.9833 22.484 20.7337 20.7337C22.484 18.9833 24.858 18 27.3333 18C29.8087 18 32.1827 18.9833 33.933 20.7337C35.6833 22.484 36.6667 24.858 36.6667 27.3333C36.6667 34.3543 28.1943 41.4897 28.1943 41.4897C27.723 41.9237 26.9472 41.919 26.4723 41.4897ZM27.3333 31.4167C27.8696 31.4167 28.4005 31.311 28.896 31.1058C29.3914 30.9006 29.8415 30.5999 30.2207 30.2207C30.5999 29.8415 30.9006 29.3914 31.1058 28.896C31.311 28.4005 31.4167 27.8696 31.4167 27.3333C31.4167 26.7971 31.311 26.2661 31.1058 25.7707C30.9006 25.2753 30.5999 24.8252 30.2207 24.446C29.8415 24.0668 29.3914 23.766 28.896 23.5608C28.4005 23.3556 27.8696 23.25 27.3333 23.25C26.2504 23.25 25.2118 23.6802 24.446 24.446C23.6802 25.2118 23.25 26.2504 23.25 27.3333C23.25 28.4163 23.6802 29.4549 24.446 30.2207C25.2118 30.9865 26.2504 31.4167 27.3333 31.4167Z"
+                      fill="#0F5238"/>
+              </svg>
+            }
+            @case ('food') {
+              <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-5">
+                <rect width="57.6667" height="57.6667" rx="16" fill="#E8E9E1"/>
+                <path
+                  d="M35.9033 41.6667H37.84C38.82 41.6667 39.625 40.9083 39.7417 39.9517L41.6667 20.725H35.8333V16H33.535V20.725H27.7367L28.0867 23.455C30.0817 24.0033 31.9483 24.995 33.0683 26.0917C34.7483 27.7483 35.9033 29.4633 35.9033 32.2633V41.6667ZM16 40.5V39.3333H33.535V40.5C33.535 41.13 33.01 41.6667 32.3333 41.6667H17.1667C16.525 41.6667 16 41.13 16 40.5ZM33.535 32.3333C33.535 23 16 23 16 32.3333H33.535ZM16 34.6667H33.5V37H16V34.6667Z"
+                  fill="#0F5238"/>
+              </svg>
+            }
+          }
+          <div class="text-2xl font-semibold text-[#285A48] sm:text-3xl">{{ step.title }}</div>
+          <div class="text-lg font-light text-[#285A48] font-manrope lg:text-xl">{{ step.description }}</div>
+        </div>
+
+        @if (!isLast) {
+          <div class="my-2 h-px w-full bg-[#DEDEDE] lg:mx-12 lg:my-0 lg:h-auto lg:w-px lg:self-stretch"></div>
+        }
+      }
+    </div>
+  </div>
+</div>
+
+<div class="relative">
+  <img src="/images/impact.png" class="h-[640px] w-full object-cover" alt="impact"/>
+
+  <div class="absolute left-0 top-0 p-6 sm:p-10 lg:p-20">
+    <div class="max-w-md text-2xl font-extrabold text-white sm:text-3xl lg:text-4xl">
+      Dampak keberlanjutan kami sejak 2021
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 right-0 flex flex-col gap-8 p-6 sm:p-10 lg:flex-row lg:items-end lg:justify-between lg:p-20">
+    <div class="max-w-sm text-sm leading-tight text-white lg:max-w-[200px] lg:text-md">
+      *Kalkulasi statistik ini di uji dengan standar SPBE serta pengujian dari
+      pihak ketiga via pengujian ****** dan ******
+    </div>
+
+    <div class="flex flex-wrap items-start gap-8 sm:gap-10 lg:items-end lg:justify-end lg:gap-16">
+      @for (stat of stats; track stat.label) {
+        <div class="flex min-w-[140px] flex-col items-start gap-0.5 sm:min-w-[180px] lg:min-w-0 lg:items-center">
+          <div class="text-4xl leading-none font-extrabold text-white sm:text-5xl lg:text-7xl">{{ stat.value }}</div>
+          <div class="text-base font-light text-white lg:text-lg">{{ stat.label }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-col px-6 py-10 sm:px-10 lg:px-20">
+  <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+    <div class="flex flex-col">
+      <div class="text-3xl text-[#2D6A4F] font-extrabold sm:text-4xl">Makanan Terdekat</div>
+      <div class="text-sm text-[#7E9C91] font-regular">Hot deals in your neighborhood right now.</div>
+    </div>
+    <a routerLink="/discover-food"
+       class="w-full rounded-4xl bg-[#2D6A4F] px-4 py-3 text-center text-base text-white font-manrope sm:w-auto sm:text-lg">
+      Lihat Semua >
+    </a>
+  </div>
+  <div class="grid grid-cols-1 gap-8 py-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10 lg:py-15 xl:gap-15">
+    @for (item of nearbyListings; track $index) {
+      <div class="flex flex-col gap-1">
+        <img [src]="item.image" class="h-64 w-full rounded-3xl object-cover sm:h-72 lg:h-75" [alt]="item.alt"/>
+        <div class="flex flex-row justify-between items-center pt-2 gap-3">
+          <div class="text-xl font-bold font-manrope text-[#1A1C18]">{{ item.title }}</div>
+          <div class="text-lg font-bold font-manrope text-[#634019]">{{ item.category }}</div>
+        </div>
+        <div class="text-xs font-light font-manrope text-[#1A1C18]">{{ item.description }}</div>
+        <div
+          class="mt-3 rounded-xl border-2 border-[rgb(15,82,56)]/20 px-14 py-3 text-center text-lg font-bold text-[#0F5238] font-manrope">
+          View Details
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+<div class="relative">
+  <img src="/images/bg-bubble.png" class="h-[520px] w-full object-cover sm:h-[580px] lg:h-auto" alt="background-bubble"/>
+  <div class="absolute inset-0 flex flex-col items-center justify-center px-6 sm:px-10">
+    <div class="text-center text-4xl font-extrabold text-white sm:text-5xl lg:text-7xl">Siap Selamatkan</div>
+    <div class="flex flex-col items-center gap-1 sm:flex-row sm:gap-4">
+      <div class="text-4xl text-white font-extrabold sm:text-5xl lg:text-7xl">Dunia</div>
+      <div class="text-4xl text-white font-bold -skew-x-8 sm:text-5xl lg:text-7xl">Bersama?</div>
+    </div>
+    <div class="max-w-xl py-6 text-center text-base font-light text-[#C5C5C5] sm:text-lg lg:py-7 lg:text-xl">Bergabunglah dengan ratusan
+      restoran dan ribuan penerima manfaat. Satu langkah kecilmu, dampak besar bagi
+      Indonesia.
+    </div>
+    <div class="flex flex-col gap-4 pt-4 sm:flex-row sm:gap-6 lg:gap-8 lg:pt-6">
+      @for (action of heroActions; track action.label) {
+        <a
+          [routerLink]="action.route"
+          class="hero-action hero-action--ghost">
+          {{ action.label }}
+        </a>
+      }
+    </div>
+  </div>
+</div>
