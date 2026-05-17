@@ -4,7 +4,7 @@ import {RouterLink} from '@angular/router';
 interface ActionLink {
   label: string;
   route: string;
-  variant: 'solid' | 'ghost';
+  variant: 'solid' | 'transparent';
 }
 
 interface HighlightCard {
@@ -54,7 +54,7 @@ export class HomePageComponent {
     {
       label: 'Jelajahi Listing',
       route: '/discover-food',
-      variant: 'ghost',
+      variant: 'transparent',
     },
   ];
 

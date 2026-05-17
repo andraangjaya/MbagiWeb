@@ -13,7 +13,7 @@
           [routerLink]="action.route"
           class="hero-action"
           [class.hero-action--solid]="action.variant === 'solid'"
-          [class.hero-action--ghost]="action.variant === 'ghost'">
+          [class.hero-action--transparent]="action.variant === 'transparent'">
           {{ action.label }}
         </a>
       }
@@ -223,7 +223,7 @@
       @for (action of heroActions; track action.label) {
         <a
           [routerLink]="action.route"
-          class="hero-action hero-action--ghost">
+          class="hero-action hero-action--transparent">
           {{ action.label }}
         </a>
       }

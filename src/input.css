@@ -28,7 +28,35 @@
     @apply bg-[#2D6A4F];
   }
 
-  .hero-action--ghost {
+  .hero-action--transparent {
     @apply border-2 border-white/30 bg-white/10 backdrop-blur-[6px];
+  }
+
+  .filter-expand-panel {
+    @apply grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 260ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .filter-expand-panel--open {
+    grid-template-rows: 1fr;
+  }
+
+  .filter-toggle {
+    @apply transition-transform duration-200 ease-in-out;
+  }
+
+  .filter-toggle--open {
+    @apply rotate-180;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }
