@@ -60,3 +60,75 @@
     display: none;
   }
 }
+
+@layer components {
+  .login-hero {
+    @apply relative flex flex-col w-full min-h-[280px] overflow-hidden bg-[#0a3d2a] md:w-1/2 md:min-h-0;
+  }
+
+  .login-hero::before {
+    content: "";
+    @apply absolute inset-0 pointer-events-none;
+    background:
+      radial-gradient(ellipse 70% 55% at 15% 90%, rgba(132, 204, 22, 0.18), transparent 60%),
+      radial-gradient(ellipse 45% 35% at 85% 15%, rgba(255, 255, 255, 0.07), transparent 55%),
+      linear-gradient(165deg, #0f5238 0%, #0a3d2a 50%, #062a1e 100%);
+  }
+
+  .login-hero::after {
+    content: "";
+    @apply absolute inset-0 opacity-35 pointer-events-none mix-blend-overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .hero-brand {
+    @apply relative z-10 p-8 text-2xl font-bold text-white md:px-12 md:pt-10 md:text-3xl;
+  }
+
+  .hero-content {
+    @apply relative z-10 flex-1 flex flex-col items-center justify-center px-8 pb-12 text-center md:px-14 md:pb-16;
+  }
+
+  .hero-eyebrow {
+    @apply font-manrope text-[12px] font-semibold uppercase tracking-[0.15em] text-[#d9f99d]/80;
+  }
+
+  .hero-headline {
+    @apply mt-4 max-w-max font-jakarta text-[32px] font-bold leading-tight text-white md:text-[44px];
+  }
+
+  .hero-subline {
+    @apply mt-4 max-w-[460px] font-manrope text-base font-light leading-relaxed text-white/75 md:text-lg;
+  }
+
+  .hero-rule {
+    @apply mt-8 w-56 h-px bg-[#a3e635]/50;
+  }
+
+  .hero-orb {
+    @apply absolute rounded-full pointer-events-none;
+  }
+
+  .hero-orb-one {
+    @apply w-[280px] h-[280px] -right-20 -bottom-15;
+    background: radial-gradient(circle, rgba(163, 230, 53, 0.12) 0%, transparent 70%);
+  }
+
+  .hero-orb-two {
+    @apply w-[160px] h-[160px] -left-10 top-[35%];
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+  }
+
+  .form-input {
+    @apply pl-4 w-full h-[52px] rounded-2xl bg-[#E2E3DB] focus:outline-0 transition-colors focus:bg-[#d8dad0];
+  }
+
+  .btn-primary {
+    @apply cursor-pointer min-w-max bg-[#0F5238] py-4 px-8 gap-2 text-white flex justify-center items-center font-bold rounded-full transition-all hover:opacity-90 active:scale-[0.98];
+  }
+
+  .social-btn {
+    @apply cursor-pointer w-[200px] bg-[#F3F4EC] flex items-center justify-center gap-2 h-[48px] rounded-lg font-manrope font-semibold transition-colors hover:bg-[#e6e8de];
+  }
+}
