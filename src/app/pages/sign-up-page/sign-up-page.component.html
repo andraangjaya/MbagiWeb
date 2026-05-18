@@ -1,5 +1,4 @@
-<div class="flex min-h-screen w-full flex-col md:flex-row">
-
+<div class="flex h-screen w-full overflow-hidden flex-col md:flex-row">
   <div class="login-hero">
     <p class="hero-brand">Mbagi</p>
 
@@ -15,118 +14,126 @@
     <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
   </div>
 
-  <div class="flex flex-1 items-center justify-center">
-    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="w-full max-w-[531px] text-left">
-      <div class="flex flex-col gap-14">
+  <div class="flex flex-1 items-center justify-center overflow-y-auto py-6 px-6">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="w-full max-w-[500px] text-left">
+      <div class="flex flex-col gap-4">
+
         <div class="header-form">
-          <p class="text-[30px] justify-baseline font-bold">Create an account</p>
-          <p class="text-[#404943] font-manrope font-light">Enter your details to begin your journey in food
-            conservation.</p>
+          <p class="text-[22px] font-bold leading-tight">Create an account</p>
+          <p class="text-[#404943] font-manrope font-light text-[13px] mt-1">Enter your details to begin your journey in
+            food conservation.</p>
         </div>
-        <div class="flex flex-col gap-[20px] font-manrope">
-          <div class="flex flex-row justify-between gap-[20px] w-full">
-            <div class="flex flex-col gap-1.5 w-full">
-              <label for="firstname" class="font-medium text-[#404943]">First Name</label>
-              <input id="firstname" type="text" placeholder="John Doe" formControlName="firstName" class="form-input"
-                [ngClass]="{ 'border-red-500': submitted && f['firstName'].errors }" />
-              <div *ngIf="submitted && f['firstName'].errors" class="text-red-500 text-xs mt-1">
+
+        <div class="flex flex-col gap-[10px] font-manrope">
+          <div class="flex flex-row justify-between gap-[12px] w-full">
+            <div class="flex flex-col gap-1 w-full">
+              <label for="firstname" class="font-medium text-[#404943] text-[12.5px]">First Name</label>
+              <input id="firstname" type="text" placeholder="John" formControlName="firstName" class="form-input"
+                     [ngClass]="{ 'border-red-500': submitted && f['firstName'].errors }"/>
+              <div *ngIf="submitted && f['firstName'].errors" class="text-red-500 text-xs mt-0.5">
                 First Name is required
               </div>
             </div>
-            <div class="flex flex-col gap-1.5 w-full">
-              <label for="lastname" class="font-medium text-[#404943]">Last Name</label>
+            <div class="flex flex-col gap-1 w-full">
+              <label for="lastname" class="font-medium text-[#404943] text-[12.5px]">Last Name</label>
               <input id="lastname" type="text" placeholder="Doe" formControlName="lastName" class="form-input"
-                [ngClass]="{ 'border-red-500': submitted && f['lastName'].errors }" />
-              <div *ngIf="submitted && f['lastName'].errors" class="text-red-500 text-xs mt-1">
+                     [ngClass]="{ 'border-red-500': submitted && f['lastName'].errors }"/>
+              <div *ngIf="submitted && f['lastName'].errors" class="text-red-500 text-xs mt-0.5">
                 Last Name is required
               </div>
             </div>
           </div>
-          <div class="flex flex-col gap-1.5">
-            <label for="email" class="font-medium text-[#404943]">Email Address</label>
+
+          <div class="flex flex-col gap-1">
+            <label for="email" class="font-medium text-[#404943] text-[12.5px]">Email Address</label>
             <input id="email" type="email" placeholder="you@example.com" formControlName="email" class="form-input"
-              [ngClass]="{ 'border-red-500': submitted && f['email'].errors }" />
-            <div *ngIf="submitted && f['email'].errors" class="text-red-500 text-xs mt-1">
+                   [ngClass]="{ 'border-red-500': submitted && f['email'].errors }"/>
+            <div *ngIf="submitted && f['email'].errors" class="text-red-500 text-xs mt-0.5">
               <div *ngIf="f['email'].errors['required']">Email is required</div>
               <div *ngIf="f['email'].errors['email']">Email must be a valid email address</div>
             </div>
           </div>
-          <div class="flex flex-col gap-1.5">
-            <label for="number" class="font-medium text-[#404943]">Phone Number</label>
-            <input id="number" type="text" placeholder="+1 (555) 000-0000" formControlName="phoneNumber" class="form-input"
-              [ngClass]="{ 'border-red-500': submitted && f['phoneNumber'].errors }" />
-            <div *ngIf="submitted && f['phoneNumber'].errors" class="text-red-500 text-xs mt-1">
+
+          <div class="flex flex-col gap-1">
+            <label for="number" class="font-medium text-[#404943] text-[12.5px]">Phone Number</label>
+            <input id="number" type="text" placeholder="+1 (555) 000-0000" formControlName="phoneNumber"
+                   class="form-input"
+                   [ngClass]="{ 'border-red-500': submitted && f['phoneNumber'].errors }"/>
+            <div *ngIf="submitted && f['phoneNumber'].errors" class="text-red-500 text-xs mt-0.5">
               <div *ngIf="f['phoneNumber'].errors['required']">Phone Number is required</div>
               <div *ngIf="f['phoneNumber'].errors['pattern']">Phone Number must contain only numbers</div>
             </div>
           </div>
-          <div class="flex flex-col gap-1.5">
-            <label for="address" class="font-medium text-[#404943]">Residential Address</label>
-            <input id="address" type="text" placeholder="123 Orchard Lane, Green Valley" formControlName="address" class="form-input"
-              [ngClass]="{ 'border-red-500': submitted && f['address'].errors }" />
-            <div *ngIf="submitted && f['address'].errors" class="text-red-500 text-xs mt-1">
+
+          <div class="flex flex-col gap-1">
+            <label for="address" class="font-medium text-[#404943] text-[12.5px]">Residential Address</label>
+            <input id="address" type="text" placeholder="123 Orchard Lane, Green Valley" formControlName="address"
+                   class="form-input"
+                   [ngClass]="{ 'border-red-500': submitted && f['address'].errors }"/>
+            <div *ngIf="submitted && f['address'].errors" class="text-red-500 text-xs mt-0.5">
               Address is required
             </div>
           </div>
-          <div class="flex flex-col gap-1.5">
-            <label for="password" class="font-medium text-[#404943]">Password</label>
+
+          <div class="flex flex-col gap-1">
+            <label for="password" class="font-medium text-[#404943] text-[12.5px]">Password</label>
             <input id="password" type="password" placeholder="••••••••" formControlName="password" class="form-input"
-              [ngClass]="{ 'border-red-500': submitted && f['password'].errors }" />
-            <div *ngIf="submitted && f['password'].errors" class="text-red-500 text-xs mt-1">
+                   [ngClass]="{ 'border-red-500': submitted && f['password'].errors }"/>
+            <div *ngIf="submitted && f['password'].errors" class="text-red-500 text-xs mt-0.5">
               <div *ngIf="f['password'].errors['required']">Password is required</div>
               <div *ngIf="f['password'].errors['minlength']">Password must be at least 8 characters</div>
               <div *ngIf="f['password'].errors['pattern']">Password must be strong (Uppercase, Lowercase, Number)</div>
             </div>
           </div>
         </div>
-        <div class="flex flex-col gap-[24px]">
+
+        <div class="flex flex-col gap-[12px]">
           <button type="submit" class="btn-primary w-full">
-            <p class="">Start Growing</p>
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <p>Start Growing</p>
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M10.1458 7.5H0V5.83333H10.1458L5.47917 1.16667L6.66667 0L13.3333 6.66667L6.66667 13.3333L5.47917 12.1667L10.1458 7.5Z"
-                fill="white" />
+                fill="white"/>
             </svg>
           </button>
 
-          <div class="flex items-center gap-4">
-            <hr class="flex-1 border-t border-[#BFC9C1]" />
-            <p class="font-medium font-manrope text-[14px] text-[#707973]">Or continue with</p>
-            <hr class="flex-1 border-t border-[#BFC9C1]" />
+          <div class="flex items-center gap-3">
+            <hr class="flex-1 border-t border-[#BFC9C1]"/>
+            <p class="font-medium font-manrope text-[12.5px] text-[#707973]">Or continue with</p>
+            <hr class="flex-1 border-t border-[#BFC9C1]"/>
           </div>
 
-          <div class="flex flex-row gap-20 pl-7">
-            <div class="social-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24">
-                <path d="M0 0h24v24H0z" fill="none" />
+          <div class="flex flex-row gap-[12px]">
+            <div class="social-btn flex-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
                 <g fill="none" fill-rule="evenodd">
                   <path
-                    d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                    d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/>
                   <path fill="currentColor"
-                    d="M12 5.5a6.5 6.5 0 1 0 6.326 8H13a1.5 1.5 0 0 1 0-3h7a1.5 1.5 0 0 1 1.5 1.5a9.5 9.5 0 1 1-2.801-6.736a1.5 1.5 0 1 1-2.116 2.127A6.48 6.48 0 0 0 12 5.5" />
+                        d="M12 5.5a6.5 6.5 0 1 0 6.326 8H13a1.5 1.5 0 0 1 0-3h7a1.5 1.5 0 0 1 1.5 1.5a9.5 9.5 0 1 1-2.801-6.736a1.5 1.5 0 1 1-2.116 2.127A6.48 6.48 0 0 0 12 5.5"/>
                 </g>
               </svg>
-
-              <p class="text-[#1A1C18]">Google</p>
+              <p class="text-[#1A1C18] text-[13px]">Google</p>
             </div>
-            <div class="social-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24">
-                <path d="M0 0h24v24H0z" fill="none" />
+            <div class="social-btn flex-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
                 <g fill="none">
                   <path
-                    d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                    d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/>
                   <path fill="currentColor"
-                    d="M13.5 21.888C18.311 21.164 22 17.013 22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 5.013 3.689 9.165 8.5 9.888V15H9a1.5 1.5 0 0 1 0-3h1.5v-2A3.5 3.5 0 0 1 14 6.5h.5a1.5 1.5 0 0 1 0 3H14a.5.5 0 0 0-.5.5v2H15a1.5 1.5 0 0 1 0 3h-1.5z" />
+                        d="M13.5 21.888C18.311 21.164 22 17.013 22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 5.013 3.689 9.165 8.5 9.888V15H9a1.5 1.5 0 0 1 0-3h1.5v-2A3.5 3.5 0 0 1 14 6.5h.5a1.5 1.5 0 0 1 0 3H14a.5.5 0 0 0-.5.5v2H15a1.5 1.5 0 0 1 0 3h-1.5z"/>
                 </g>
               </svg>
-
-              <p class="text-[#1A1C18]">Facebook</p>
+              <p class="text-[#1A1C18] text-[13px]">Facebook</p>
             </div>
           </div>
 
           <div class="flex items-center justify-center">
-            <p class="font-manrope font-medium text-base">Already have an account? <span
-                routerLink="/login" class="text-[#0F5238] font-manrope font-bold text-base cursor-pointer">Login here</span></p>
+            <p class="font-manrope font-medium text-[13px]">Already have an account?
+              <span routerLink="/login" class="text-[#0F5238] font-manrope font-bold text-[13px] cursor-pointer">Login here</span>
+            </p>
           </div>
 
         </div>
