@@ -36,4 +36,9 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/profile-page/profile-page.component').then((m) => m.ProfilePageComponent),
   },
 
+  {
+    path: 'about-us',
+    loadComponent: () => import('./pages/about-us-page/about-us-page.component').then((m) => m.AboutUsPageComponent),
+  },
+
 ];
