@@ -1,27 +1,26 @@
-<div class="bg-[#2D6A4F] px-4 py-4 sm:px-6 lg:px-8">
+<div class="px-4 py-4 sm:px-6 lg:px-8">
   <div class="flex items-center justify-between gap-4">
     <div class="hidden flex-1 items-center gap-6 lg:flex xl:gap-8">
-      <a routerLink="/home" class="text-white font-semibold">Home</a>
-      <a routerLink="/discover-food" class="text-white font-semibold">Discover Food</a>
-      <a routerLink="/user/dashboard" class="text-white font-semibold">Dashboard</a>
-      <a routerLink="/about-us" class="text-white font-semibold">About Us</a>
+      <a routerLink="/home" [class]="linkClass">Home</a>
+      <a routerLink="/discover-food" [class]="linkClass">Discover Food</a>
+      <a routerLink="/about-us" [class]="linkClass">About Us</a>
     </div>
 
     <div class="flex items-center gap-3 lg:hidden">
       <button
         type="button"
-        class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white"
+        [class]="'inline-flex h-11 w-11 items-center justify-center rounded-xl ' + iconClass"
         (click)="toggleMenu()"
         aria-label="Toggle navigation menu"
         [attr.aria-expanded]="isMenuOpen">
         @if (!isMenuOpen) {
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M4 7H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             <path d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             <path d="M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
         } @else {
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
@@ -30,35 +29,26 @@
     </div>
 
     <div class="flex flex-1 justify-center lg:flex-none">
-      <a routerLink="/home" class="text-2xl font-extrabold text-white sm:text-3xl" (click)="closeMenu()">
+      <a routerLink="/home" [class]="'text-2xl font-extrabold sm:text-3xl ' + iconClass" (click)="closeMenu()">
         Mbagi
       </a>
     </div>
 
     <div class="hidden flex-1 items-center justify-end gap-4 lg:flex xl:gap-6">
-      <a routerLink="/login" class="text-white font-semibold">
-        Login
-      </a>
-
-      <a routerLink="/sign-up" class="rounded-xl bg-white px-5 py-2 font-semibold text-[#2D6A4F]">
-        Sign Up
-      </a>
+      <a routerLink="/login" [class]="linkClass">Login</a>
+      <a routerLink="/sign-up" [class]="signUpClass">Sign Up</a>
     </div>
 
     <div class="flex items-center justify-end lg:hidden">
-      <a routerLink="/sign-up" class="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-[#2D6A4F]">
-        Sign Up
-      </a>
+      <a routerLink="/sign-up" [class]="signUpClass + ' text-sm'">Sign Up</a>
     </div>
   </div>
 
   @if (isMenuOpen) {
-    <div class="mt-4 flex flex-col gap-3 rounded-2xl  p-4 lg:hidden">
-      <a routerLink="/home" class="text-white font-semibold" (click)="closeMenu()">Home</a>
-      <a routerLink="/discover-food" class="text-white font-semibold" (click)="closeMenu()">Discover Food</a>
-      <a routerLink="/user/dashboard" class="text-white font-semibold" (click)="closeMenu()">Dashboard</a>
-      <a routerLink="" class="text-white font-semibold" (click)="closeMenu()">About Us</a>
-      <a routerLink="/login" class="text-white font-semibold" (click)="closeMenu()">Login</a>
+    <div class="mt-4 flex flex-col gap-3 rounded-2xl p-4 lg:hidden">
+      <a routerLink="/home" [class]="linkClass" (click)="closeMenu()">Home</a>
+      <a routerLink="/discover-food" [class]="linkClass" (click)="closeMenu()">Discover Food</a>
+      <a routerLink="" [class]="linkClass" (click)="closeMenu()">About Us</a>
     </div>
   }
 </div>

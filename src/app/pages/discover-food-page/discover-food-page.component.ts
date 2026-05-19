@@ -1,5 +1,6 @@
 import {Component, signal} from '@angular/core';
 import {RouterLink} from '@angular/router';
+import {NavbarThemeDirective} from '../../components/navbar/navbar-theme.directive';
 
 interface FoodCard {
   image: string;
@@ -13,7 +14,8 @@ interface FoodCard {
 @Component({
   selector: 'app-food-listing-page.component',
   imports: [
-    RouterLink
+    RouterLink,
+    NavbarThemeDirective
   ],
   templateUrl: './discover-food-page.component.html',
   styleUrl: './discover-food-page.component.css',

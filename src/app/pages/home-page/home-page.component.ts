@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {RouterLink} from '@angular/router';
+import {NavbarThemeDirective} from '../../components/navbar/navbar-theme.directive';
 
 interface ActionLink {
   label: string;
@@ -27,17 +28,18 @@ interface StatItem {
   label: string;
 }
 
-interface NearbyListing {
+interface FoodCard {
   image: string;
   alt: string;
   title: string;
-  category: string;
   description: string;
+  distance: string;
+  route: string;
 }
 
 @Component({
   selector: 'app-home-page',
-  imports: [RouterLink],
+  imports: [RouterLink, NavbarThemeDirective],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',
 })
@@ -109,35 +111,136 @@ export class HomePageComponent {
     { value: '-27%', label: 'total Volume limbah makanan' },
   ];
 
-  nearbyListings: NearbyListing[] = [
+  foods: FoodCard[] = [
     {
-      image: '/images/food-1.png',
-      alt: 'food',
-      title: 'Freshly Baked Bread',
-      category: 'FRUIT',
-      description: '2kg of strawberries and blueberries.',
+      image: '/images/food-expires.png',
+      alt: 'waste-reduction',
+      title: 'Artisan Bakery Batch',
+      description: '6 loaves of freshly baked whole grain sourdough. Perfect for local shelters or community hubs.',
+      distance: 'Free • 1.1 miles',
+      route: '',
     },
     {
-      image: '/images/food-2.png',
-      alt: 'food',
-      title: 'Nasi Goreng telor',
-      category: 'MEAL',
-      description: '2kg of strawberries and blueberries.',
+      image: '/images/food-expires.png',
+      alt: 'waste-reduction',
+      title: 'Artisan Bakery Batch',
+      description: '6 loaves of freshly baked whole grain sourdough. Perfect for local shelters or community hubs.',
+      distance: 'Free • 1.1 miles',
+      route: '',
     },
     {
-      image: '/images/food-3.png',
-      alt: 'food',
-      title: 'Burger dengan Kentang',
-      category: 'MEAL',
-      description: '2kg of strawberries and blueberries.',
+      image: '/images/food-expires.png',
+      alt: 'waste-reduction',
+      title: 'Artisan Bakery Batch',
+      description: '6 loaves of freshly baked whole grain sourdough. Perfect for local shelters or community hubs.',
+      distance: 'Free • 1.1 miles',
+      route: '',
     },
     {
-      image: '/images/food-4.png',
-      alt: 'food',
-      title: 'Mie Jebew',
-      category: 'MEAL',
-      description: '2kg of strawberries and blueberries.',
+      image: '/images/food-expires.png',
+      alt: 'waste-reduction',
+      title: 'Artisan Bakery Batch',
+      description: '6 loaves of freshly baked whole grain sourdough. Perfect for local shelters or community hubs.',
+      distance: 'Free • 1.1 miles',
+      route: '',
     },
+    {
+      image: '/images/food-expires.png',
+      alt: 'waste-reduction',
+      title: 'Artisan Bakery Batch',
+      description: '6 loaves of freshly baked whole grain sourdough. Perfect for local shelters or community hubs.',
+      distance: 'Free • 1.1 miles',
+      route: '',
+    },
+    {
+      image: '/images/food-expires.png',
+      alt: 'waste-reduction',
+      title: 'Artisan Bakery Batch',
+      description: '6 loaves of freshly baked whole grain sourdough. Perfect for local shelters or community hubs.',
+      distance: 'Free • 1.1 miles',
+      route: '',
+    },
+    {
+      image: '/images/food-expires.png',
+      alt: 'waste-reduction',
+      title: 'Artisan Bakery Batch',
+      description: '6 loaves of freshly baked whole grain sourdough. Perfect for local shelters or community hubs.',
+      distance: 'Free • 1.1 miles',
+      route: '',
+    },
+    {
+      image: '/images/food-expires.png',
+      alt: 'waste-reduction',
+      title: 'Artisan Bakery Batch',
+      description: '6 loaves of freshly baked whole grain sourdough. Perfect for local shelters or community hubs.',
+      distance: 'Free • 1.1 miles',
+      route: '',
+    },
+    {
+      image: '/images/food-expires.png',
+      alt: 'waste-reduction',
+      title: 'Artisan Bakery Batch',
+      description: '6 loaves of freshly baked whole grain sourdough. Perfect for local shelters or community hubs.',
+      distance: 'Free • 1.1 miles',
+      route: '',
+    },
+    {
+      image: '/images/food-expires.png',
+      alt: 'waste-reduction',
+      title: 'Artisan Bakery Batch',
+      description: '6 loaves of freshly baked whole grain sourdough. Perfect for local shelters or community hubs.',
+      distance: 'Free • 1.1 miles',
+      route: '',
+    },
+    {
+      image: '/images/food-expires.png',
+      alt: 'waste-reduction',
+      title: 'Artisan Bakery Batch',
+      description: '6 loaves of freshly baked whole grain sourdough. Perfect for local shelters or community hubs.',
+      distance: 'Free • 1.1 miles',
+      route: '',
+    },
+    {
+      image: '/images/food-expires.png',
+      alt: 'waste-reduction',
+      title: 'Artisan Bakery Batch',
+      description: '6 loaves of freshly baked whole grain sourdough. Perfect for local shelters or community hubs.',
+      distance: 'Free • 1.1 miles',
+      route: '',
+    },
+    {
+      image: '/images/food-expires.png',
+      alt: 'waste-reduction',
+      title: 'Artisan Bakery Batch',
+      description: '6 loaves of freshly baked whole grain sourdough. Perfect for local shelters or community hubs.',
+      distance: 'Free • 1.1 miles',
+      route: '',
+    },
+    {
+      image: '/images/food-expires.png',
+      alt: 'waste-reduction',
+      title: 'Artisan Bakery Batch',
+      description: '6 loaves of freshly baked whole grain sourdough. Perfect for local shelters or community hubs.',
+      distance: 'Free • 1.1 miles',
+      route: '',
+    },
+    {
+      image: '/images/food-expires.png',
+      alt: 'waste-reduction',
+      title: 'Artisan Bakery Batch',
+      description: '6 loaves of freshly baked whole grain sourdough. Perfect for local shelters or community hubs.',
+      distance: 'Free • 1.1 miles',
+      route: '',
+    },
+    {
+      image: '/images/food-expires.png',
+      alt: 'waste-reduction',
+      title: 'Artisan Bakery Batch',
+      description: '6 loaves of freshly baked whole grain sourdough. Perfect for local shelters or community hubs.',
+      distance: 'Free • 1.1 miles',
+      route: '',
+    },
+
   ];
 
 }
