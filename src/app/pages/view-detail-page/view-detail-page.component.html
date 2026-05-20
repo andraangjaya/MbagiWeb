@@ -1,4 +1,5 @@
-<div class="flex flex-col gap-[40px]">
+
+<div class="flex flex-col gap-[40px] mt-20 mb-20">
 
   <div class="flex flex-col items-center">
     <div class="flex flex-col gap-[45px]">
@@ -62,7 +63,7 @@
 
       </div>
 
-      <div class="flex flex-row">
+      <div class="flex flex-row justify-between">
 
         <div class="flex flex-col w-[651px] gap-[16px]">
           <div class="flex flex-col py-[20px]">
@@ -124,8 +125,10 @@
                 What you need to know</p>
               <p
                 class="font-manrope text-base font-medium leading-[150%] text-[#1A1C18]/60 w-[500px] px-[20px] border-l border-l-[#DADADA]">
-                <span class="font-bold leading-[120%]">Keep Your QR</span> Code Ready You will need to show the QR code on your phone at the register to claim your
-                food, so make sure your device is charged and ready to scan.</p>
+                <span class="font-bold leading-[120%]">Keep Your QR</span> Code Ready You will need to show the QR code
+                on your phone at the register to claim your
+                food, so make sure your device is charged and ready to scan.
+              </p>
             </div>
           </div>
 
@@ -135,18 +138,24 @@
                 class="font-bold text-base font-manrope leading-[120%] text-white bg-[#2B8056] w-fit py-[8px] px-[16px] rounded-[322px]">
                 Quick tips for pickups</p>
 
-                <div class="flex flex-col gap-[16px]">
+              <div class="flex flex-col gap-[16px]">
                 <div class="w-max bg-[#FAFAFA] border-[#DADADA] border px-[16px]  pt-[16px] pb-[24px] rounded-[8px]">
                   <div class="flex flex-col gap-[12px] w-[651px]">
-                    <p class="font-manrope text-base font-bold leading-[120%] text-[#2D6A4F] w-[500px] ]">Arrive during the window</p>
-                    <p class="font-manrope text-base font-medium leading-[150%] text-[#1A1C18]/60 w-[619px]">Make sure to check the specific collection time slot in your app, as stores usually have a strict 15-to-30-minute window at the end of the day.</p>
+                    <p class="font-manrope text-base font-bold leading-[120%] text-[#2D6A4F] w-[500px] ]">Arrive during
+                      the window</p>
+                    <p class="font-manrope text-base font-medium leading-[150%] text-[#1A1C18]/60 w-[619px]">Make sure
+                      to check the specific collection time slot in your app, as stores usually have a strict
+                      15-to-30-minute window at the end of the day.</p>
                   </div>
                 </div>
 
                 <div class="w-max bg-[#FAFAFA] border-[#DADADA] border px-[16px]  pt-[16px] pb-[24px] rounded-[8px]">
                   <div class="flex flex-col gap-[12px] w-[651px]">
-                    <p class="font-manrope text-base font-bold leading-[120%] text-[#2D6A4F] w-[500px] ]">Arrive during the window</p>
-                    <p class="font-manrope text-base font-medium leading-[150%] text-[#1A1C18]/60 w-[619px]">Make sure to check the specific collection time slot in your app, as stores usually have a strict 15-to-30-minute window at the end of the day.</p>
+                    <p class="font-manrope text-base font-bold leading-[120%] text-[#2D6A4F] w-[500px] ]">Arrive during
+                      the window</p>
+                    <p class="font-manrope text-base font-medium leading-[150%] text-[#1A1C18]/60 w-[619px]">Make sure
+                      to check the specific collection time slot in your app, as stores usually have a strict
+                      15-to-30-minute window at the end of the day.</p>
                   </div>
                 </div>
               </div>
@@ -154,8 +163,145 @@
           </div>
         </div>
 
-        <div class="flex flex-row">
+        <div class="flex flex-col gap-[80px]">
 
+          <div class="flex flex-row w-[820px] gap-[20px]">
+
+            <ng-container *ngFor="let card of listingFoods(); track $index">
+              <div class="flex flex-col overflow-hidden rounded-t-2xl w-[400px] h-[548px]">
+                <img [src]="card.image" class="h-[290px] w-full object-cover" [alt]="card.alt" />
+  
+                <div class="flex flex-col justify-between bg-[#D9D9D9]/10 gap-5">
+                  <div class="space-y-3 px-6 py-4">
+                    <div class="text-xl font-bold text-[#0F5238]">
+                      {{ card.title }}
+                    </div>
+  
+                    <div class="text-sm leading-7 text-[#404943] font-manrope line-clamp-2">
+                      {{ card.description }}
+                    </div>
+  
+                    <div class="text-xs font-medium text-[#707973] font-manrope line-clamp-1">
+                      {{ card.location }} | {{ card.timeOperational }}
+                    </div>
+                  </div>
+  
+                  <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-6 py-5">
+                    <div class="text-md font-bold text-[#634019] font-manrope">
+                      {{ card.distance }}
+                    </div>
+  
+                    <button [routerLink]="card.route"
+                      class="rounded-full bg-[#0F5238] px-6 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
+                      View Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+  
+            
+              <div class="flex flex-col  h-[548px] ">
+                <div class="flex w-[400px] h-[442px] items-center justify-center bg-[#FAFAFA] border border-[#DADADA] rounded-t-[16px]">
+                  <img src="images/barcode.png" alt="" class="w-[360px] h-[360px]">
+                </div>
+                <div class="flex flex-row w-[400px] h-[106px] p-[20px] border border-[#DADADA] relative rounded-b-[16px]  ">
+                <div class="flex flex-col gap-[8px] ">
+                  <p class="text-[#222222] font-ibm font-semibold text-lg leading-[100%] tracking-[-4%] w-[162px]">Scan to Secure
+                    Your Meal</p>
+                  <p class="text-[#1A1C18]/60 font-manrope text-base leading-[140%] w-[261px]">Scan to get reveal the food location</p>
+                </div>
+                <p class="text-[#FF0000] font-manrope font-bold text-sm w-[115px] leading-[150%] whitespace-nowrap absolute right-5">
+                  EXP IN 24 HOURS
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-[20px]">
+            <div class="flex flex-row justify-between items-center">
+              <p class="text-[#09090B] font-semibold text-2xl leading-[120%] tracking-[-4%]">Recommended for you</p>
+              <div class="flex flex-row gap-[12px] justify-center items-center">
+                <p class="font-ibm text-sm leading-[100%] tracking-[-4%] text-[#8F8F8F]">VIEW ALL LISTINGS</p>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.16699 10.0003H15.8337M10.0003 15.8337L15.8337 10.0003L10.0003 4.16699" stroke="#B4B4B4" stroke-width="1.6625" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  
+              </div>
+              
+            </div>
+
+            <div class="flex flex-row w-[820px] gap-[20px]">
+
+              <ng-container *ngFor="let card of listingFoods(); track $index">
+                <div class="flex flex-col overflow-hidden rounded-t-2xl w-[400px] h-[548px]">
+                  <img [src]="card.image" class="h-[290px] w-full object-cover" [alt]="card.alt" />
+    
+                  <div class="flex flex-col justify-between bg-[#D9D9D9]/10 gap-5">
+                    <div class="space-y-3 px-6 py-4">
+                      <div class="text-xl font-bold text-[#0F5238]">
+                        {{ card.title }}
+                      </div>
+    
+                      <div class="text-sm leading-7 text-[#404943] font-manrope line-clamp-2">
+                        {{ card.description }}
+                      </div>
+    
+                      <div class="text-xs font-medium text-[#707973] font-manrope line-clamp-1">
+                        {{ card.location }} | {{ card.timeOperational }}
+                      </div>
+                    </div>
+    
+                    <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-6 py-5">
+                      <div class="text-md font-bold text-[#634019] font-manrope">
+                        {{ card.distance }}
+                      </div>
+    
+                      <button [routerLink]="card.route"
+                        class="rounded-full bg-[#0F5238] px-6 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
+                        View Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+    
+              <ng-container *ngFor="let card of listingFoods(); track $index">
+                <div class="flex flex-col overflow-hidden rounded-t-2xl w-[400px] h-[548px]">
+                  <img [src]="card.image" class="h-[290px] w-full object-cover" [alt]="card.alt" />
+    
+                  <div class="flex flex-col justify-between bg-[#D9D9D9]/10 gap-5">
+                    <div class="space-y-3 px-6 py-4">
+                      <div class="text-xl font-bold text-[#0F5238]">
+                        {{ card.title }}
+                      </div>
+    
+                      <div class="text-sm leading-7 text-[#404943] font-manrope line-clamp-2">
+                        {{ card.description }}
+                      </div>
+    
+                      <div class="text-xs font-medium text-[#707973] font-manrope line-clamp-1">
+                        {{ card.location }} | {{ card.timeOperational }}
+                      </div>
+                    </div>
+    
+                    <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-6 py-5">
+                      <div class="text-md font-bold text-[#634019] font-manrope">
+                        {{ card.distance }}
+                      </div>
+    
+                      <button [routerLink]="card.route"
+                        class="rounded-full bg-[#0F5238] px-6 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
+                        View Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+              
+            </div>
+
+          </div>
         </div>
 
       </div>

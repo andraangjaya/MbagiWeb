@@ -1,9 +1,18 @@
 <div class="px-4 py-4 sm:px-6 lg:px-8">
   <div class="flex items-center justify-between gap-4">
     <div class="hidden flex-1 items-center gap-6 lg:flex xl:gap-8">
-      <a routerLink="/home" [class]="linkClass">Home</a>
-      <a routerLink="/discover-food" [class]="linkClass">Discover Food</a>
-      <a routerLink="/about-us" [class]="linkClass">About Us</a>
+
+      @if (!auth.isLoggedIn()) {
+        <a routerLink="/home" [class]="linkClass">Home</a>
+      } @else {
+        <a routerLink="/user/dashboard" [class]="linkClass">Dashboard</a>
+      }
+      <a routerLink="/discover-food" [class]="linkClass">
+        Discover Food
+      </a>
+      <a routerLink="/about-us" [class]="linkClass">
+        About Us
+      </a>
     </div>
 
     <div class="flex items-center gap-3 lg:hidden">
@@ -34,10 +43,82 @@
       </a>
     </div>
 
-    <div class="hidden flex-1 items-center justify-end gap-4 lg:flex xl:gap-6">
-      <a routerLink="/login" [class]="linkClass">Login</a>
-      <a routerLink="/sign-up" [class]="signUpClass">Sign Up</a>
-    </div>
+    @if (!auth.isLoggedIn()) {
+      <div class="hidden flex-1 items-center justify-end gap-4 lg:flex xl:gap-6">
+        <a routerLink="/login" [class]="linkClass">Login</a>
+        <a routerLink="/sign-up" [class]="signUpClass">Sign Up</a>
+      </div>
+    } @else {
+      <div class="hidden flex-1 items-center justify-end gap-4 lg:flex xl:gap-4">
+        <div [class]="iconButtonClass">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M8.58337 17.5C8.72286 17.7537 8.92791 17.9653 9.17712 18.1127C9.42632 18.26 9.71052 18.3378 10 18.3378C10.2896 18.3378 10.5738 18.26 10.823 18.1127C11.0722 17.9653 11.2772 17.7537 11.4167 17.5M5 6.66667C5 5.34059 5.52678 4.06882 6.46447 3.13113C7.40215 2.19345 8.67392 1.66667 10 1.66667C11.3261 1.66667 12.5979 2.19345 13.5355 3.13113C14.4732 4.06882 15 5.34059 15 6.66667C15 12.5 17.5 14.1667 17.5 14.1667H2.5C2.5 14.1667 5 12.5 5 6.66667Z"
+              [attr.stroke]="iconStrokeColor" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="relative">
+          <button type="button" [class]="locationClass" (click)="toggleLocationMenu()"
+                  [attr.aria-expanded]="isLocationMenuOpen">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path
+                d="M16.6668 8.33333C16.6668 12.4942 12.051 16.8275 10.501 18.1658C10.3566 18.2744 10.1808 18.3331 10.0002 18.3331C9.8195 18.3331 9.64373 18.2744 9.49933 18.1658C7.94933 16.8275 3.3335 12.4942 3.3335 8.33333C3.3335 6.56522 4.03588 4.86953 5.28612 3.61929C6.53636 2.36905 8.23205 1.66667 10.0002 1.66667C11.7683 1.66667 13.464 2.36905 14.7142 3.61929C15.9645 4.86953 16.6668 6.56522 16.6668 8.33333Z"
+                [attr.stroke]="iconStrokeColor" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+              <path
+                d="M10.0002 10.8333C11.3809 10.8333 12.5002 9.71405 12.5002 8.33333C12.5002 6.95262 11.3809 5.83333 10.0002 5.83333C8.61945 5.83333 7.50016 6.95262 7.50016 8.33333C7.50016 9.71405 8.61945 10.8333 10.0002 10.8333Z"
+                [attr.stroke]="iconStrokeColor" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span [class]="locationTextClass">{{ selectedLocationLabel }}</span>
+          </button>
+
+          @if (isLocationMenuOpen) {
+            <div
+              class="absolute right-0 top-full z-50 mt-3 w-[320px] rounded-2xl border border-[#DADADA] bg-white p-4 shadow-xl">
+              <div class="flex items-center gap-2 rounded-xl border border-[#DADADA] px-3 py-2">
+                <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+                  <path
+                    d="M16.6 18L10.3 11.7C9.8 12.1 9.225 12.4167 8.575 12.65C7.925 12.8833 7.23333 13 6.5 13C4.68333 13 3.14583 12.3708 1.8875 11.1125C0.629167 9.85417 0 8.31667 0 6.5C0 4.68333 0.629167 3.14583 1.8875 1.8875C3.14583 0.629167 4.68333 0 6.5 0C8.31667 0 9.85417 0.629167 11.1125 1.8875C12.3708 3.14583 13 4.68333 13 6.5C13 7.23333 12.8833 7.925 12.65 8.575C12.4167 9.225 12.1 9.8 11.7 10.3L18 16.6L16.6 18Z"
+                    fill="#707973"/>
+                </svg>
+                <input
+                  [(ngModel)]="locationQuery"
+                  class="w-full bg-transparent text-sm text-[#404943] outline-none"
+                  placeholder="Search Indonesian area"
+                />
+              </div>
+
+              <div class="mt-3 max-h-64 overflow-y-auto">
+                @if (filteredAreas.length) {
+                  @for (area of filteredAreas; track area.id) {
+                    <button
+                      type="button"
+                      class="flex w-full flex-col rounded-xl px-3 py-2 text-left transition hover:bg-[#F4F7F2]"
+                      (click)="selectLocation(area)">
+                      <span class="text-sm font-semibold text-[#1A1C18]">{{ area.name }}</span>
+                      <span class="text-xs text-[#707973]">{{ area.province }}</span>
+                    </button>
+                  }
+                } @else {
+                  <div class="px-3 py-4 text-sm text-[#707973]">No matching Indonesian area found.</div>
+                }
+              </div>
+
+              @if (locationService.selectedArea()) {
+                <button
+                  type="button"
+                  class="mt-3 text-sm font-semibold text-[#2D6A4F]"
+                  (click)="clearLocation()">
+                  Clear location
+                </button>
+              }
+            </div>
+          }
+        </div>
+
+        <img src="/images/profile-pic.png" class="rounded-full w-[45px] h-auto" alt="profile-pic"/>
+      </div>
+    }
 
     <div class="flex items-center justify-end lg:hidden">
       <a routerLink="/sign-up" [class]="signUpClass + ' text-sm'">Sign Up</a>

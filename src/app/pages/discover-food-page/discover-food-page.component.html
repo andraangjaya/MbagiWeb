@@ -39,23 +39,14 @@
 
 <section navbarTheme="light">
   <div class="w-full">
-    <div class="flex flex-row items-center gap-10 px-10 py-5">
-      <div class="flex shrink-0 flex-row items-center gap-3 bg-[#0F5238] px-6 py-4 rounded-[20px]">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M13.9991 2L9.66574 14C9.63649 14.0638 9.58953 14.1179 9.53044 14.1558C9.47135 14.1938 9.40261 14.2139 9.3324 14.2139C9.26219 14.2139 9.19346 14.1938 9.13437 14.1558C9.07528 14.1179 9.02832 14.0638 8.99907 14L6.66574 9.33333L1.99907 7C1.93524 6.97075 1.88115 6.92379 1.84323 6.8647C1.80531 6.80561 1.78516 6.73688 1.78516 6.66667C1.78516 6.59646 1.80531 6.52772 1.84323 6.46863C1.88115 6.40954 1.93524 6.36258 1.99907 6.33333L13.9991 2Z"
-            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span class="text-base text-white font-semibold">Gading Serpong</span>
-      </div>
-
-      <div class="flex flex-row items-center gap-3 border border-[#2D6A4F] rounded-[20px] w-xs h-[44px] px-7">
+    <div class="flex flex-row items-center gap-24 px-10 py-5">
+      <div class="flex flex-row items-center gap-3 border border-[#2D6A4F] rounded-[20px] w-xl h-[44px] px-7">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M16.6 18L10.3 11.7C9.8 12.1 9.225 12.4167 8.575 12.65C7.925 12.8833 7.23333 13 6.5 13C4.68333 13 3.14583 12.3708 1.8875 11.1125C0.629167 9.85417 0 8.31667 0 6.5C0 4.68333 0.629167 3.14583 1.8875 1.8875C3.14583 0.629167 4.68333 0 6.5 0C8.31667 0 9.85417 0.629167 11.1125 1.8875C12.3708 3.14583 13 4.68333 13 6.5C13 7.23333 12.8833 7.925 12.65 8.575C12.4167 9.225 12.1 9.8 11.7 10.3L18 16.6L16.6 18ZM6.5 11C7.75 11 8.8125 10.5625 9.6875 9.6875C10.5625 8.8125 11 7.75 11 6.5C11 5.25 10.5625 4.1875 9.6875 3.3125C8.8125 2.4375 7.75 2 6.5 2C5.25 2 4.1875 2.4375 3.3125 3.3125C2.4375 4.1875 2 5.25 2 6.5C2 7.75 2.4375 8.8125 3.3125 9.6875C4.1875 10.5625 5.25 11 6.5 11Z"
             fill="#707973"/>
         </svg>
-        <input class="text-[#707973] outline-none bg-transparent" placeholder="Search foods...">
+        <input class="text-[#707973] w-xl outline-none bg-transparent" placeholder="Search foods...">
       </div>
 
       <div class="flex flex-row items-center gap-4">
@@ -115,76 +106,49 @@
 <section navbarTheme="light">
   <div class="flex flex-col gap-8 p-10 ">
     <div class="flex flex-row gap-5">
-      <div class="flex flex-1 overflow-hidden rounded-2xl">
-        <div class="w-[320px] shrink-0">
-          <img
-            src="/images/food-expires.png"
-            class="h-full w-full object-cover"
-            alt="food"
-          />
-        </div>
-
-        <div class="flex flex-1 flex-col justify-between bg-[#FCFCF8]">
-          <div class="space-y-3 px-6 py-8">
-            <div class="text-2xl font-bold text-[#0F5238]">
-              Artisan Bakery Batch
-            </div>
-
-            <div class="text-md leading-7 text-[#404943] font-manrope">
-              6 loaves of freshly baked whole grain sourdough.
-              Perfect for local shelters or community hubs.
-            </div>
+      @for (card of featuredFoods(); track $index) {
+        <div class="flex flex-1 overflow-hidden rounded-2xl">
+          <div class="w-[320px] shrink-0">
+            <img
+              [src]="card.image"
+              class="h-full w-full object-cover"
+              [alt]="card.alt"
+            />
           </div>
 
-          <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-6 py-5">
-            <div class="text-md font-bold text-[#634019] font-manrope">
-              Free • 1.1 miles
+          <div class="flex flex-1 flex-col justify-between bg-[#FCFCF8]">
+            <div class="space-y-3 px-6 py-8">
+              <div class="text-2xl font-bold text-[#0F5238]">
+                {{ card.title }}
+              </div>
+
+              <div class="text-md leading-7 text-[#404943] font-manrope line-clamp-2">
+                {{ card.description }}
+              </div>
+
+              <div class="text-sm font-medium text-[#707973] font-manrope">
+                {{ card.location }} | {{ card.timeOperational }}
+              </div>
             </div>
 
-            <button
-              class="rounded-full bg-[#0F5238] px-8 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
-              Claim Now
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-1 overflow-hidden rounded-2xl">
-        <div class="w-[320px] shrink-0">
-          <img
-            src="/images/food-expires.png"
-            class="h-full w-full object-cover"
-            alt="food"
-          />
-        </div>
+            <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-6 py-5">
+              <div class="text-md font-bold text-[#634019] font-manrope">
+                {{ card.distance }}
+              </div>
 
-        <div class="flex flex-1 flex-col justify-between bg-[#FCFCF8]">
-          <div class="space-y-3 px-6 py-8">
-            <div class="text-2xl font-bold text-[#0F5238]">
-              Artisan Bakery Batch
-            </div>
-
-            <div class="text-md leading-7 text-[#404943] font-manrope">
-              6 loaves of freshly baked whole grain sourdough.
-              Perfect for local shelters or community hubs.
+              <button
+                [routerLink]="card.route"
+                class="rounded-full bg-[#0F5238] px-8 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
+                View Details
+              </button>
             </div>
           </div>
-
-          <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-6 py-5">
-            <div class="text-md font-bold text-[#634019] font-manrope">
-              Free • 1.1 miles
-            </div>
-
-            <button
-              class="rounded-full bg-[#0F5238] px-8 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
-              Claim Now
-            </button>
-          </div>
         </div>
-      </div>
+      }
     </div>
 
     <div class="grid grid-cols-4 gap-10">
-      @for (card of foods; track card.title) {
+      @for (card of listingFoods(); track $index) {
         <div class="flex flex-col overflow-hidden rounded-t-2xl">
           <img
             [src]="card.image"
@@ -198,8 +162,12 @@
                 {{ card.title }}
               </div>
 
-              <div class="text-sm leading-7 text-[#404943] font-manrope">
+              <div class="text-sm leading-7 text-[#404943] font-manrope line-clamp-2">
                 {{ card.description }}
+              </div>
+
+              <div class="text-xs font-medium text-[#707973] font-manrope line-clamp-1">
+                {{ card.location }} | {{ card.timeOperational }}
               </div>
             </div>
 
@@ -211,7 +179,7 @@
               <button
                 [routerLink]="card.route"
                 class="rounded-full bg-[#0F5238] px-6 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
-                Claim
+                View Details
               </button>
             </div>
           </div>
@@ -241,5 +209,3 @@
     </a>
   </div>
 </section>
-
-
