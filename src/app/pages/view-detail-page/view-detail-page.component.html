@@ -165,7 +165,7 @@
 
           <div class="flex flex-row w-[820px] gap-[20px]">
 
-            <ng-container *ngFor="let card of listingFoods(); track $index">
+            @for (card of listingFoods().slice(0, 1); track $index) {
               <div class="flex flex-col overflow-hidden rounded-t-2xl w-[400px] h-[548px]">
                 <img [src]="card.image" class="h-[290px] w-full object-cover" [alt]="card.alt" />
 
@@ -196,7 +196,7 @@
                   </div>
                 </div>
               </div>
-            </ng-container>
+            }
 
 
             <div class="flex flex-col  h-[548px] ">
@@ -235,10 +235,10 @@
 
             </div>
 
-            <div class="flex flex-row w-[820px] gap-[20px]">
+            <div class="flex flex-row w-[820px] gap-[20px] overflow-x-auto overflow-y-hidden">
 
-              <ng-container *ngFor="let card of listingFoods(); track $index">
-                <div class="flex flex-col overflow-hidden rounded-t-2xl w-[400px] h-[548px]">
+              @for (card of listingFoods().slice(1); track $index) {
+                <div class="flex flex-col overflow-hidden rounded-t-2xl w-[400px] min-w-[400px] shrink-0 h-[548px]">
                   <img [src]="card.image" class="h-[290px] w-full object-cover" [alt]="card.alt" />
 
                   <div class="flex flex-col justify-between bg-[#D9D9D9]/10 gap-5">
@@ -268,40 +268,9 @@
                     </div>
                   </div>
                 </div>
-              </ng-container>
+              }
 
-              <ng-container *ngFor="let card of listingFoods(); track $index">
-                <div class="flex flex-col overflow-hidden rounded-t-2xl w-[400px] h-[548px]">
-                  <img [src]="card.image" class="h-[290px] w-full object-cover" [alt]="card.alt" />
 
-                  <div class="flex flex-col justify-between bg-[#D9D9D9]/10 gap-5">
-                    <div class="space-y-3 px-6 py-4">
-                      <div class="text-xl font-bold text-[#0F5238]">
-                        {{ card.title }}
-                      </div>
-
-                      <div class="text-sm leading-7 text-[#404943] font-manrope line-clamp-2">
-                        {{ card.description }}
-                      </div>
-
-                      <div class="text-xs font-medium text-[#707973] font-manrope line-clamp-1">
-                        {{ card.location }} | {{ card.timeOperational }}
-                      </div>
-                    </div>
-
-                    <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-6 py-5">
-                      <div class="text-md font-bold text-[#634019] font-manrope">
-                        {{ card.distance }}
-                      </div>
-
-                      <button [routerLink]="card.route"
-                        class="rounded-full bg-[#0F5238] px-6 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
-                        View Details
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </ng-container>
 
             </div>
 
