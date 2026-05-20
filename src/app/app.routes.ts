@@ -16,7 +16,7 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/login-page/login-page.component').then((m) => m.LoginPageComponent),
   },
 
-  {
+  { 
     path: 'sign-up',
     loadComponent: () => import('./pages/sign-up-page/sign-up-page.component').then((m) => m.SignUpPageComponent),
   },
@@ -39,6 +39,11 @@ export const routes: Routes = [
   {
     path: 'about-us',
     loadComponent: () => import('./pages/about-us-page/about-us-page.component').then((m) => m.AboutUsPageComponent),
+  },
+
+  {
+    path: 'food/details',
+    loadComponent: () => import('./pages/view-detail-page/view-detail-page.component').then((m) => m.ViewDetailPageComponent),
   },
 
 ];
