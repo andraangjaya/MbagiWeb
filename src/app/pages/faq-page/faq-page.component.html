@@ -1,0 +1,95 @@
+<section navbarTheme="dark">
+  <div class="flex flex-col items-center justify-center bg-[#2D6A4F] gap-8 pt-30 pb-30">
+    <div class="text-white font-bold font-manrope rounded-[24px] border border-white px-6 py-2">
+      FAQ'S
+    </div>
+    <div class="w-[800px] text-6xl text-white text-center font-extrabold">Commonly Asked question</div>
+    <div class="w-[800px] text-lg text-white text-center font-light font-manrope">Terimakasih sudah menggunakan Mbagi
+    </div>
+    <div class="text-[#7E9C91] text-base font-manrope font-normal">Effective 21 January 2026</div>
+  </div>
+</section>
+
+<div class="flex flex-col my-10 mx-90 mb-20 border border-[#2D6A4F]">
+  @for (faq of faqs; track $index) {
+    <div class="flex flex-col border-b border-[#2D6A4F]">
+      <div
+        class="flex flex-row justify-between items-center p-4 cursor-pointer select-none"
+        (click)="toggle($index)">
+        <span class="text-[#2D6A4F] text-2xl font-semibold font-ibm">{{ faq.question }}</span>
+        <svg class="shrink-0 transition-transform duration-300" [class.rotate-90]="openIndex === $index" width="40"
+             height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="19.5" stroke="#2D6A4F"/>
+          <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M21.7153 11.8809C21.8794 11.717 22.1018 11.625 22.3337 11.625C22.5655 11.625 22.7879 11.717 22.952 11.8809L29.952 18.8809C30.1159 19.045 30.2079 19.2674 30.2079 19.4992C30.2079 19.7311 30.1159 19.9535 29.952 20.1176L22.952 27.1176C22.8719 27.2035 22.7753 27.2725 22.668 27.3203C22.5606 27.3681 22.4448 27.3938 22.3273 27.3959C22.2098 27.398 22.0931 27.3764 21.9841 27.3324C21.8752 27.2884 21.7762 27.2229 21.6931 27.1398C21.61 27.0567 21.5445 26.9577 21.5005 26.8488C21.4565 26.7398 21.4349 26.6231 21.437 26.5056C21.439 26.3881 21.4648 26.2723 21.5126 26.1649C21.5604 26.0576 21.6294 25.961 21.7153 25.8809L27.222 20.3742H10.667C10.4349 20.3742 10.2124 20.282 10.0483 20.1179C9.88418 19.9539 9.79199 19.7313 9.79199 19.4992C9.79199 19.2672 9.88418 19.0446 10.0483 18.8805C10.2124 18.7164 10.4349 18.6242 10.667 18.6242H27.222L21.7153 13.1176C21.5515 12.9535 21.4594 12.7311 21.4594 12.4992C21.4594 12.2674 21.5515 12.045 21.7153 11.8809Z"
+                fill="#2D6A4F"
+          />
+        </svg>
+      </div>
+
+      @if (openIndex === $index) {
+        <div class="px-4 pb-6 text-[#2D6A4F] text-md font-normal font-manrope tracking-[-2%]">
+          {{ faq.answer }}
+        </div>
+      }
+    </div>
+  }
+
+  <div class="flex flex-col border-b border-[#2D6A4F] p-4 gap-5">
+    <span class="text-[#2D6A4F] text-2xl font-semibold font-ibm">What's new?</span>
+    <img src="/images/faq-dashboard.png" class="rounded-2xl border border-[#2D6A4F]" alt="dashboard"/>
+    <div class="flex flex-col gap-2">
+      <span class="text-[#2D6A4F] text-lg font-extrabold">Mbagi Impact Dashboard</span>
+      <span class="text-[#2D6A4F] text-md font-normal tracking-[-2%] font-manrope">See exactly how many hungry bellies you've filled.</span>
+    </div>
+  </div>
+
+  <div class="flex flex-col border-b border-[#2D6A4F] p-4 gap-5">
+    <div class="flex flex-row gap-5">
+      <div class="flex flex-col gap-8">
+        <div class="flex flex-col border-b border-[#2D6A4F] pb-5">
+          <span class="text-[#2D6A4F] text-xl font-extrabold">Chat with us</span>
+          <span
+            class="text-[#2D6A4F] text-md font-normal tracking-[-2%] font-manrope">Reach out to Mbagi's Support</span>
+        </div>
+        <div class="flex flex-col border-b border-[#2D6A4F] pb-5">
+          <span class="text-[#2D6A4F] text-xl font-extrabold">Join our Community</span>
+          <span class="text-[#2D6A4F] text-md font-normal tracking-[-2%] font-manrope">Find any answer</span>
+        </div>
+        <div class="flex flex-col border-b border-[#2D6A4F] pb-5">
+          <span class="text-[#2D6A4F] text-xl font-extrabold">Grab Some Food</span>
+          <span class="text-[#2D6A4F] text-md font-normal tracking-[-2%] font-manrope">Reach out the nearest FoodListings</span>
+        </div>
+      </div>
+      <img src="/images/faq-pic.png" class="rounded-2xl object-cover w-[500px]"/>
+    </div>
+  </div>
+</div>
+
+<section navbarTheme="dark">
+  <div class="relative">
+    <img src="/images/bg-bubble.png" class="h-[520px] w-full object-cover sm:h-[580px] lg:h-auto"
+         alt="background-bubble"/>
+    <div class="absolute inset-0 flex flex-col items-center justify-center px-6 sm:px-10">
+      <div class="text-center text-4xl font-extrabold text-white sm:text-5xl lg:text-7xl">Siap Selamatkan</div>
+      <div class="flex flex-col items-center gap-1 sm:flex-row sm:gap-4">
+        <div class="text-4xl text-white font-extrabold sm:text-5xl lg:text-7xl">Dunia</div>
+        <div class="text-4xl text-white font-bold -skew-x-8 sm:text-5xl lg:text-7xl">Bersama?</div>
+      </div>
+      <div class="max-w-xl py-6 text-center text-base font-light text-[#C5C5C5] sm:text-lg lg:py-7 lg:text-xl">
+        Bergabunglah dengan ratusan
+        restoran dan ribuan penerima manfaat. Satu langkah kecilmu, dampak besar bagi
+        Indonesia.
+      </div>
+      <div class="flex flex-col gap-4 pt-4 sm:flex-row sm:gap-6 lg:gap-8 lg:pt-6">
+        @for (action of heroActions; track action.label) {
+          <a
+            [routerLink]="action.route"
+            class="hero-action hero-action--transparent">
+            {{ action.label }}
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+</section>

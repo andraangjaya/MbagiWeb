@@ -45,4 +45,19 @@ export const routes: Routes = [
     path: 'food/details',
     loadComponent: () => import('./pages/view-detail-page/view-detail-page.component').then((m) => m.ViewDetailPageComponent),
   },
+
+  {
+    path: 'faq',
+    loadComponent: () => import('./pages/faq-page/faq-page.component').then((m) => m.FaqPageComponent),
+  },
+
+  {
+    path: 'privacy-policy',
+    loadComponent: () => import('./pages/privacy-policy-page/privacy-policy-page.component').then((m) => m.PrivacyPolicyPageComponent),
+  },
+
+  {
+    path: 'terms-cons',
+    loadComponent: () => import('./pages/term-cons-page/term-cons-page.component').then((m) => m.TermConsPageComponent),
+  },
 ];

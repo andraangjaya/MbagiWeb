@@ -220,6 +220,9 @@
   }
 }
 @layer utilities {
+  .pointer-events-none {
+    pointer-events: none;
+  }
   .absolute {
     position: absolute;
   }
@@ -262,6 +265,18 @@
   .z-50 {
     z-index: 50;
   }
+  .m-2 {
+    margin: calc(var(--spacing) * 2);
+  }
+  .m-4 {
+    margin: calc(var(--spacing) * 4);
+  }
+  .m-10 {
+    margin: calc(var(--spacing) * 10);
+  }
+  .m-100 {
+    margin: calc(var(--spacing) * 100);
+  }
   .mx-10 {
     margin-inline: calc(var(--spacing) * 10);
   }
@@ -271,11 +286,35 @@
   .mx-25 {
     margin-inline: calc(var(--spacing) * 25);
   }
+  .mx-30 {
+    margin-inline: calc(var(--spacing) * 30);
+  }
+  .mx-50 {
+    margin-inline: calc(var(--spacing) * 50);
+  }
+  .mx-80 {
+    margin-inline: calc(var(--spacing) * 80);
+  }
+  .mx-90 {
+    margin-inline: calc(var(--spacing) * 90);
+  }
+  .mx-100 {
+    margin-inline: calc(var(--spacing) * 100);
+  }
   .mx-auto {
     margin-inline: auto;
   }
   .my-8 {
     margin-block: calc(var(--spacing) * 8);
+  }
+  .my-10 {
+    margin-block: calc(var(--spacing) * 10);
+  }
+  .my-15 {
+    margin-block: calc(var(--spacing) * 15);
+  }
+  .my-20 {
+    margin-block: calc(var(--spacing) * 20);
   }
   .my-30 {
     margin-block: calc(var(--spacing) * 30);
@@ -451,6 +490,9 @@
   .w-\[79\.5px\] {
     width: 79.5px;
   }
+  .w-\[100px\] {
+    width: 100px;
+  }
   .w-\[131PX\] {
     width: 131PX;
   }
@@ -471,6 +513,9 @@
   }
   .w-\[459\.56px\] {
     width: 459.56px;
+  }
+  .w-\[500px\] {
+    width: 500px;
   }
   .w-\[520px\] {
     width: 520px;
@@ -559,8 +604,17 @@
   .shrink-0 {
     flex-shrink: 0;
   }
+  .rotate-90 {
+    rotate: 90deg;
+  }
+  .rotate-180 {
+    rotate: 180deg;
+  }
   .-skew-x-8 {
     --tw-skew-x: skewX(calc(8deg * -1));
+    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
   .animate-marquee {
@@ -571,6 +625,15 @@
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .list-inside {
+    list-style-position: inside;
+  }
+  .list-decimal {
+    list-style-type: decimal;
+  }
+  .list-disc {
+    list-style-type: disc;
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -646,6 +709,9 @@
   }
   .gap-10 {
     gap: calc(var(--spacing) * 10);
+  }
+  .gap-12 {
+    gap: calc(var(--spacing) * 12);
   }
   .gap-14 {
     gap: calc(var(--spacing) * 14);
@@ -810,6 +876,12 @@
   .border-\[\#E2E3DB\]\/50 {
     border-color: color-mix(in oklab, #E2E3DB 50%, transparent);
   }
+  .border-\[\#\] {
+    border-color: #;
+  }
+  .border-black {
+    border-color: var(--color-black);
+  }
   .border-red-500 {
     border-color: var(--color-red-500);
   }
@@ -896,6 +968,9 @@
   }
   .object-center {
     object-position: center;
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
   }
   .p-3 {
     padding: calc(var(--spacing) * 3);
@@ -1028,6 +1103,12 @@
   }
   .pr-23 {
     padding-right: calc(var(--spacing) * 23);
+  }
+  .pb-2 {
+    padding-bottom: calc(var(--spacing) * 2);
+  }
+  .pb-4 {
+    padding-bottom: calc(var(--spacing) * 4);
   }
   .pb-5 {
     padding-bottom: calc(var(--spacing) * 5);
@@ -1256,6 +1337,10 @@
     --tw-tracking: -1.2px;
     letter-spacing: -1.2px;
   }
+  .tracking-\[-2\%\] {
+    --tw-tracking: -2%;
+    letter-spacing: -2%;
+  }
   .tracking-\[-4\%\] {
     --tw-tracking: -4%;
     letter-spacing: -4%;
@@ -1314,6 +1399,9 @@
   }
   .text-\[\#404943\] {
     color: #404943;
+  }
+  .text-\[\#444444\] {
+    color: #444444;
   }
   .text-\[\#626262\] {
     color: #626262;
@@ -1384,6 +1472,11 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .transition-transform {
+    transition-property: transform, translate, scale, rotate;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .duration-150 {
     --tw-duration: 150ms;
     transition-duration: 150ms;
@@ -1395,6 +1488,10 @@
   .outline-none {
     --tw-outline-style: none;
     outline-style: none;
+  }
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
   }
   .hover\:scale-105 {
     &:hover {
@@ -1677,6 +1774,11 @@
   .lg\:pt-6 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 6);
+    }
+  }
+  .lg\:pt-12 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 12);
     }
   }
   .lg\:text-6xl {
