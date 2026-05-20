@@ -4,7 +4,7 @@ import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-sign-up-page.component',
+  selector: 'app-sign-up-page',
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule, RouterLink],
   templateUrl: './sign-up-page.component.html',
@@ -34,7 +34,6 @@ export class SignUpPageComponent {
       return;
     }
 
-    // Direct to dashboard as requested
     this.router.navigate(['/user/dashboard']);
   }
 }

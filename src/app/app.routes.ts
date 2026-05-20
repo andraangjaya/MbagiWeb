@@ -41,4 +41,8 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/about-us-page/about-us-page.component').then((m) => m.AboutUsPageComponent),
   },
 
+  {
+    path: 'food/details',
+    loadComponent: () => import('./pages/view-detail-page/view-detail-page.component').then((m) => m.ViewDetailPageComponent),
+  },
 ];
