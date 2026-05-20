@@ -14,8 +14,7 @@
 
           <div class="">
             <a
-              routerLink=""
-              class="inline-flex items-center justify-center rounded-full border-2 border-white/30 bg-white/10 px-10 py-4 text-md font-bold text-white backdrop-blur-[6px]">
+              class="inline-flex items-center justify-center rounded-full border-2 border-white/30 bg-white/10 px-10 py-4 text-md font-bold text-white backdrop-blur-[6px] cursor-pointer">
               Jelajahi Listing
             </a>
           </div>
@@ -50,19 +49,24 @@
       </div>
 
       <div class="flex flex-row items-center gap-4">
-        <div class="flex-none text-base text-white font-semibold font-manrope bg-[#0F5238] rounded-full px-8 py-3">
+        <div (click)="selectCategory('All Items')" 
+             [class]="'flex-none text-base font-semibold font-manrope rounded-full px-8 py-3 cursor-pointer transition-colors duration-150 ' + (selectedFilter() === 'All Items' ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
           All Items
         </div>
-        <div class="flex-none text-base text-[#404943] font-semibold font-manrope bg-[#E2E3DB] rounded-full px-8 py-3">
+        <div (click)="selectCategory('Vegetables')" 
+             [class]="'flex-none text-base font-semibold font-manrope rounded-full px-8 py-3 cursor-pointer transition-colors duration-150 ' + (selectedFilter() === 'Vegetables' ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
           Vegetables
         </div>
-        <div class="flex-none text-base text-[#404943] font-semibold font-manrope bg-[#E2E3DB] rounded-full px-8 py-3">
+        <div (click)="selectCategory('Bakery')" 
+             [class]="'flex-none text-base font-semibold font-manrope rounded-full px-8 py-3 cursor-pointer transition-colors duration-150 ' + (selectedFilter() === 'Bakery' ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
           Bakery
         </div>
-        <div class="flex-none text-base text-[#404943] font-semibold font-manrope bg-[#E2E3DB] rounded-full px-8 py-3">
+        <div (click)="selectCategory('Dairy & Eggs')" 
+             [class]="'flex-none text-base font-semibold font-manrope rounded-full px-8 py-3 cursor-pointer transition-colors duration-150 ' + (selectedFilter() === 'Dairy & Eggs' ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
           Dairy &amp; Eggs
         </div>
-        <div class="flex-none text-base text-[#404943] font-semibold font-manrope bg-[#E2E3DB] rounded-full px-8 py-3">
+        <div (click)="selectCategory('Pantry')" 
+             [class]="'flex-none text-base font-semibold font-manrope rounded-full px-8 py-3 cursor-pointer transition-colors duration-150 ' + (selectedFilter() === 'Pantry' ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
           Pantry
         </div>
 
@@ -89,9 +93,9 @@
         <div class="flex flex-wrap gap-3 px-10 pb-5">
           @for (category of extraCategories; track category) {
             <button
+              (click)="selectCategory(category)"
               type="button"
-              class="rounded-full bg-[#E2E3DB] px-5 py-3 text-base font-semibold font-manrope text-[#404943]
-                   transition-colors duration-150 hover:bg-[#0F5238] hover:text-white cursor-pointer">
+              [class]="'rounded-full px-5 py-3 text-base font-semibold font-manrope transition-colors duration-150 cursor-pointer ' + (selectedFilter() === category ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
               {{ category }}
             </button>
           }
@@ -189,9 +193,8 @@
   </div>
 
   <div class="flex justify-center my-8 mb-18">
-    <a
-      routerLink=""
-      class="inline-flex items-center gap-2 text-white text-lg font-bold font-manrope bg-[#2D6A4F] rounded-4xl px-8 py-4"
+    <button
+      class="inline-flex items-center gap-2 text-white text-lg font-bold font-manrope bg-[#2D6A4F] rounded-4xl px-8 py-4 cursor-pointer hover:bg-[#1f4f39] transition"
     >
       <svg
         width="28"
@@ -206,6 +209,6 @@
         />
       </svg>
       Load More Items
-    </a>
+    </button>
   </div>
 </section>

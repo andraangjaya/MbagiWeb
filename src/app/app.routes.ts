@@ -42,7 +42,7 @@ export const routes: Routes = [
   },
 
   {
-    path: 'food/details',
+    path: 'food/details/:id',
     loadComponent: () => import('./pages/view-detail-page/view-detail-page.component').then((m) => m.ViewDetailPageComponent),
   },
 

@@ -1,8 +1,8 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { NavbarThemeDirective } from '../../components/navbar/navbar-theme.directive';
-import { GeoPoint, LocationService } from '../../location.service';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { LocationService } from '../../location.service';
+import { FoodListing, FoodListingService } from '../../food-listing.service';
 
 interface FoodCard {
   image: string;
@@ -15,43 +15,34 @@ interface FoodCard {
   route: string;
 }
 
-interface FoodSeed {
-  image: string;
-  alt: string;
-  title: string;
-  description: string;
-  pickupLocation: GeoPoint;
-  location: string;
-  timeOperational: string;
-  route: string;
 }
 
 @Component({
   selector: 'app-view-detail-page',
   standalone: true,
-  imports: [CommonModule, RouterLink, NavbarThemeDirective],
+  imports: [CommonModule, RouterLink],
   templateUrl: './view-detail-page.component.html',
   styleUrls: ['./view-detail-page.component.css'],
 })
 export class ViewDetailPageComponent {
   private locationService = inject(LocationService);
 
-  private foodSeeds: FoodSeed[] = [
-    {
-      image: '/images/food-expires.png',
-      alt: 'bakery-leftover',
-      title: 'Artisan Bakery Batch',
-      description:
-        "6 loaves of freshly baked whole grain sourdough from today's unsold bakery stock. Still soft and perfect for shelters or community kitchens.",
-      pickupLocation: { latitude: -8.6705, longitude: 115.2126 },
-      location: 'Renon, Denpasar',
-      timeOperational: '21:20 WIB - 22:40 WIB',
-      route: '',
-    },
-  ];
+  private foodListingService = inject(FoodListingService);
+  private route = inject(ActivatedRoute);
 
-  readonly foods = computed<FoodCard[]>(() =>
-    this.foodSeeds.map((food) => ({
+  foodDetail = signal<FoodListing | undefined>(undefined);
+  relatedFoods = signal<FoodListing[]>([]);
+
+  constructor() {
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      this.foodDetail.set(this.foodListingService.getById(id));
+      this.relatedFoods.set(this.foodListingService.getRelated(id, 4));
+    });
+  }
+
+  readonly listingFoods = computed<FoodCard[]>(() =>
+    this.relatedFoods().map((food) => ({
       image: food.image,
       alt: food.alt,
       title: food.title,
@@ -59,9 +50,7 @@ export class ViewDetailPageComponent {
       distance: this.locationService.formatDistance(food.pickupLocation),
       location: food.location,
       timeOperational: food.timeOperational,
-      route: food.route,
+      route: '/food/details/' + food.id,
     }))
   );
-
-  readonly listingFoods = computed(() => this.foods());
 }

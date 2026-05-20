@@ -1,3 +1,4 @@
+@if (foodDetail(); as food) {
 <div class="flex flex-col gap-[40px] mt-20 mb-20">
   <div class="flex flex-col items-center">
     <div class="flex flex-col gap-[45px]">
@@ -8,9 +9,9 @@
             <div class="flex flex-col items-center">
               <div class="flex flex-col gap-[32px] pb-[40px]">
                 <div class="flex flex-col gap-[16px]">
-                  <p class="font-semibold text-[40px] leading-[120%] tracking-[-4%] text-[#09090B]">Freshly Baked Breads
-                    - Tukad Citarum,no.44</p>
-                  <p class="font-manrope text-base leading-[150%] text-[#8F8F8F] font-medium">Freshly Baked Breads bag
+                  <p class="font-semibold text-[40px] leading-[120%] tracking-[-4%] text-[#09090B]">{{ food.title }}
+                    - {{ food.location }}</p>
+                  <p class="font-manrope text-base leading-[150%] text-[#8F8F8F] font-medium">{{ food.category }} bag
                     mix</p>
                 </div>
 
@@ -26,8 +27,7 @@
                           d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
                           stroke="#444444" stroke-width="1.5" />
                       </svg>
-                      <p class="font-manrope text-base leading-[150%] text-[#444444] font-medium">Jl. Tukad Citarum
-                        No.44</p>
+                      <p class="font-manrope text-base leading-[150%] text-[#444444] font-medium">{{ food.location }}</p>
                     </div>
                     <div class="flex flex-row gap-[12px]">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@
                           stroke-linejoin="round" />
                       </svg>
 
-                      <p class="font-manrope text-base leading-[150%] text-[#444444] font-medium">21:20WIB - 22:40WIB
+                      <p class="font-manrope text-base leading-[150%] text-[#444444] font-medium">{{ food.timeOperational }}
                       </p>
                     </div>
                   </div>
@@ -71,9 +71,7 @@
                 What’s inside</p>
               <p
                 class="font-manrope text-base font-medium leading-[150%] text-[#1A1C18]/60 w-[500px] px-[20px] border-l border-l-[#DADADA]">
-                Rescue a delicious assortment of goodies
-                from the country’s go-to spot for fresh bakes and daily eats! Your Surprise Bag will feature a mix of
-                savory sandwiches, golden pastries, and irresistible sweet treats.</p>
+                {{ food.description }}</p>
             </div>
           </div>
 
@@ -307,3 +305,4 @@
     </div>
   </div>
 </div>
+}
