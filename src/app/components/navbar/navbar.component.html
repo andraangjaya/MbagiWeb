@@ -127,17 +127,29 @@
       </div>
     }
 
-    <div class="flex items-center justify-end lg:hidden">
-      <a routerLink="/sign-up" [class]="signUpClass + ' text-sm'">Sign Up</a>
+    <div class="flex items-center justify-end gap-3 lg:hidden">
+      @if (!auth.isLoggedIn()) {
+        <a routerLink="/sign-up" [class]="signUpClass + ' text-sm'">Sign Up</a>
+      } @else {
+        <img routerLink="/profile" src="/images/profile-pic.png" class="rounded-full w-[36px] h-[36px] cursor-pointer object-cover" alt="profile-pic" title="Profile" (click)="closeMenu()"/>
+      }
     </div>
   </div>
 
   @if (isMenuOpen) {
     <div class="mt-4 flex flex-col gap-3 rounded-2xl p-4 lg:hidden">
-      <a routerLink="/home" [class]="linkClass" (click)="closeMenu()">Home</a>
+      @if (!auth.isLoggedIn()) {
+        <a routerLink="/home" [class]="linkClass" (click)="closeMenu()">Home</a>
+      } @else {
+        <a routerLink="/user/dashboard" [class]="linkClass" (click)="closeMenu()">Dashboard</a>
+      }
       <a routerLink="/discover-food" [class]="linkClass" (click)="closeMenu()">Discover Food</a>
       <a routerLink="/about-us" [class]="linkClass" (click)="closeMenu()">About Us</a>
+      @if (!auth.isLoggedIn()) {
+        <a routerLink="/login" [class]="linkClass" (click)="closeMenu()">Login</a>
+      }
       @if (auth.isLoggedIn()) {
+        <a routerLink="/profile" [class]="linkClass" (click)="closeMenu()">Profile</a>
         <button (click)="logout()" [class]="linkClass + ' text-left text-red-500'">Logout</button>
       }
     </div>
