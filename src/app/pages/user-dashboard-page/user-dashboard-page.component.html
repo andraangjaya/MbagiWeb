@@ -1,37 +1,39 @@
 <section navbarTheme="light">
-  <div class="flex flex-col gap-10">
-    <div class="flex flex-row pt-20 px-10 gap-10">
-      <div class="relative flex-1 overflow-hidden rounded-xl">
-        <img src="/images/community-impact.png" class="h-full w-full object-cover"/>
-        <div class="absolute inset-0 flex flex-col gap-5 bg-gradient-to-t from-black/60 to-transparent p-10">
+  <div class="flex flex-col gap-6 md:gap-10">
+    <div class="flex flex-col lg:flex-row pt-24 md:pt-28 px-4 md:px-10 gap-6 md:gap-10">
+      <div class="relative flex-1 overflow-hidden rounded-xl bg-[#2D6A4F] lg:bg-transparent">
+        <img src="/images/community-impact.png" class="hidden md:block h-full w-full object-cover" />
+        <div class="relative md:absolute inset-0 flex flex-col gap-5 md:bg-gradient-to-t md:from-black/60 md:to-transparent p-6 md:p-10">
           <div class="flex w-fit flex-row items-center gap-4 rounded-full bg-white/20 px-5 py-2 backdrop-blur-md">
             <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="8" height="8" rx="4" fill="#0F5238"/>
+              <rect width="8" height="8" rx="4" fill="#0F5238" />
             </svg>
-            <div class="text-white font-normal font-ibm text-sm">URGENT REQUEST</div>
+            <div class="text-white font-normal font-ibm text-xs md:text-sm">URGENT REQUEST</div>
           </div>
           <div class="mt-auto flex flex-col gap-3">
-            <div class="text-4xl font-semibold text-white">Gourmet Catering Surplus</div>
-            <div class="text-md font-medium text-white/80 font-manrope">
+            <div class="text-2xl md:text-4xl font-semibold text-white">Gourmet Catering Surplus</div>
+            <div class="text-sm md:text-md font-medium text-white/80 font-manrope">
               30+ premium lunch boxes available for collection in the West District. High-quality nutritional balance.
             </div>
-            <a routerLink="/discover-food" class="mt-4 w-fit rounded-xl bg-[#0F5238] px-6 py-3 text-base font-extrabold text-white">
+            <a routerLink="/discover-food"
+              class="mt-2 md:mt-4 w-fit rounded-xl bg-[#0F5238] px-6 py-3 text-sm md:text-base font-extrabold text-white">
               Request Now
             </a>
           </div>
         </div>
       </div>
 
-      <div class="relative flex-1 overflow-hidden rounded-xl bg-[#0F5238] p-10">
-        <div class="flex h-full flex-col gap-5">
+      <div class="relative flex-1 overflow-hidden rounded-xl bg-[#0F5238] p-6 md:p-10">
+        <img src="/images/texture.png" class="hidden md:block absolute inset-0 h-full w-full object-cover opacity-20" />
+        <div class="relative z-10 flex h-full flex-col gap-5">
           <div class="flex w-fit flex-row items-center gap-4 rounded-full bg-white/20 px-5 py-2 backdrop-blur-md">
             <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="8" height="8" rx="4" fill="#0F5238"/>
+              <rect width="8" height="8" rx="4" fill="#0F5238" />
             </svg>
-            <div class="text-white font-normal font-ibm text-sm">URGENT REQUEST</div>
+            <div class="text-white font-normal font-ibm text-xs md:text-sm">URGENT REQUEST</div>
           </div>
-          <div class="mt-3 text-4xl font-semibold text-white">Reviving wilted greens in ice-cold water.</div>
-          <div class="text-md font-medium text-white/80 font-manrope">
+          <div class="mt-3 text-2xl md:text-4xl font-semibold text-white">Reviving wilted greens in ice-cold water.</div>
+          <div class="text-sm md:text-md font-medium text-white/80 font-manrope">
             Submerge your greens in a bowl of ice-water for 15 minutes to crisp up cellular structures and restore
             texture.
           </div>
@@ -39,14 +41,14 @@
       </div>
     </div>
 
-    <div class="overflow-hidden bg-[#285A48] py-8 mx-10 rounded-xl">
-      <div class="flex w-max flex-nowrap gap-8 animate-marquee hover:[animation-play-state:paused]">
+    <div class="overflow-hidden bg-[#285A48] py-4 md:py-8 mx-4 md:mx-10 rounded-xl">
+      <div class="flex w-max flex-nowrap gap-4 md:gap-8 animate-marquee hover:[animation-play-state:paused]">
         @for (card of foods(); track $index) {
-          <a [routerLink]="card.route"
-             class="shrink-0 whitespace-nowrap text-2xl font-extrabold text-white sm:text-3xl hover:underline cursor-pointer">
-            {{ card.title }}
-          </a>
-          <div class="h-10 w-px bg-white/40"></div>
+        <a [routerLink]="card.route"
+          class="shrink-0 whitespace-nowrap text-lg sm:text-2xl md:text-3xl font-extrabold text-white hover:underline cursor-pointer">
+          {{ card.title }}
+        </a>
+        <div class="h-6 md:h-10 w-px bg-white/40 mt-1 md:mt-0"></div>
         }
       </div>
     </div>
@@ -55,110 +57,113 @@
 
 <section navbarTheme="light">
   <div class="flex flex-col gap-5">
-    <div class="flex flex-row justify-between px-10 pt-20">
-      <div class="text-[#09090B] text-xl font-semibold tracking-[-4%]">
+    <div class="flex flex-row items-center justify-between px-4 md:px-10 pt-10 md:pt-20">
+      <div class="text-[#09090B] text-lg md:text-xl font-semibold tracking-[-4%]">
         Recent Upload
       </div>
-      <div class="flex flex-row items-center gap-3">
+      <div class="hidden md:flex flex-row items-center gap-3">
         <div class="text-sm text-[#8F8F8F] font-normal font-ibm">
           VIEW ALL LISTINGS
         </div>
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4.16602 10H15.8327M9.99935 15.8334L15.8327 10L9.99935 4.16669" stroke="#B4B4B4"
-                stroke-width="1.6625" stroke-linecap="round" stroke-linejoin="round"/>
+            stroke-width="1.6625" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <div class="md:hidden">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.16602 10H15.8327M9.99935 15.8334L15.8327 10L9.99935 4.16669" stroke="#B4B4B4" stroke-width="1.6625" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </div>
     </div>
-    <div class="flex flex-row gap-8 overflow-x-auto pb-10 mx-10 no-scrollbar cursor-grab">
+    <div class="flex flex-row gap-4 md:gap-8 overflow-x-auto pb-10 px-4 md:px-10 no-scrollbar cursor-grab">
       @for (card of foods(); track $index) {
-        <div class="flex min-w-[380px] flex-col overflow-hidden rounded-2xl">
-          <img
-            [src]="card.image"
-            class="h-[240px] w-full object-cover"
-            [alt]="card.alt"
-          />
+      <div class="flex min-w-[320px] md:min-w-[380px] flex-col overflow-hidden rounded-2xl h-[420px] md:h-[460px]">
+        <img [src]="card.image" class="h-[200px] md:h-[240px] w-full object-cover shrink-0" [alt]="card.alt" />
 
-          <div class="flex flex-col justify-between bg-[#D9D9D9]/10 gap-5">
-            <div class="space-y-3 px-6 py-4">
-              <div class="text-xl font-bold text-[#0F5238]">
-                {{ card.title }}
-              </div>
-
-              <div class="text-sm leading-7 text-[#404943] font-manrope">
-                {{ card.description }}
-              </div>
+        <div class="flex flex-col justify-between bg-[#D9D9D9]/10 gap-4 md:gap-5 h-full">
+          <div class="space-y-2 md:space-y-3 px-5 md:px-6 py-4">
+            <div class="text-lg md:text-xl font-bold text-[#0F5238]">
+              {{ card.title }}
             </div>
 
-            <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-6 py-5">
-              <div class="text-md font-bold text-[#634019] font-manrope">
-                {{ card.distance }}
-              </div>
-
-              <button
-                [routerLink]="card.route"
-                class="rounded-full bg-[#0F5238] px-6 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
-                View Details
-              </button>
+            <div class="text-sm leading-6 md:leading-7 text-[#404943] font-manrope line-clamp-1">
+              {{ card.description }}
             </div>
           </div>
+
+          <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-5 md:px-6 py-4 md:py-5">
+            <div class="text-sm md:text-md font-bold text-[#634019] font-manrope">
+              {{ card.distance }}
+            </div>
+
+            <button [routerLink]="card.route"
+              class="rounded-full bg-[#0F5238] px-5 md:px-6 py-2 md:py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
+              View Details
+            </button>
+          </div>
         </div>
+      </div>
       }
     </div>
   </div>
 </section>
 
 <section navbarTheme="light">
-  <div class="flex flex-col px-10 pt-5">
+  <div class="flex flex-col px-4 md:px-10 pt-5">
     <div class="flex flex-row mb-5">
-      <div class="text-[#09090B] text-xl font-semibold tracking-[-4%]">Nearest Community Logs</div>
+      <div class="text-[#09090B] text-lg md:text-xl font-semibold tracking-[-4%]">Nearest Community Logs</div>
     </div>
 
-    <div class="relative bg-[#FAFAFA] rounded-2xl border border-[#DADADA] px-10 py-5">
-      <div class="absolute left-[42px] top-[30px] bottom-[51px] w-0.5 bg-[#0F5238]"></div>
+    <div class="relative bg-[#FAFAFA] rounded-2xl border border-[#DADADA] px-6 md:px-10 py-5 md:py-6">
+      <div class="hidden md:block absolute left-[42px] top-[30px] bottom-[51px] w-0.5 bg-[#0F5238]"></div>
 
-      <div class="flex flex-row items-end justify-between">
+      <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6">
         <div class="flex flex-col">
           <div class="flex flex-row pb-6">
             <svg class="mt-1.5 shrink-0 relative z-10" width="6" height="6" viewBox="0 0 6 6" fill="none"
-                 xmlns="http://www.w3.org/2000/svg">
-              <rect width="6" height="6" rx="3" fill="#0F5238"/>
+              xmlns="http://www.w3.org/2000/svg">
+              <rect width="6" height="6" rx="3" fill="#0F5238" />
             </svg>
-            <div class="flex flex-col items-start ml-2 gap-1">
-              <div class="text-base font-manrope font-bold leading-[120%]">David laid just shared 2 portions of
+            <div class="flex flex-col items-start ml-3 md:ml-2 gap-1">
+              <div class="text-sm md:text-base font-manrope font-bold leading-[120%]">David laid just shared 2 portions of
                 vegetable
                 curry.
               </div>
-              <div class="text-sm text-[#8F8F8F] font-manrope font-medium">2 mins ago • Panjer</div>
+              <div class="text-xs md:text-sm text-[#8F8F8F] font-manrope font-medium">2 mins ago • Panjer</div>
             </div>
           </div>
 
           <div class="flex flex-row pb-6">
             <svg class="mt-1.5 shrink-0 relative z-10" width="6" height="6" viewBox="0 0 6 6" fill="none"
-                 xmlns="http://www.w3.org/2000/svg">
-              <rect width="6" height="6" rx="3" fill="#0F5238"/>
+              xmlns="http://www.w3.org/2000/svg">
+              <rect width="6" height="6" rx="3" fill="#0F5238" />
             </svg>
-            <div class="flex flex-col items-start ml-2 gap-1">
-              <div class="text-base font-manrope font-bold leading-[120%]">roy kyosi just shared 5 portions of nasi
+            <div class="flex flex-col items-start ml-3 md:ml-2 gap-1">
+              <div class="text-sm md:text-base font-manrope font-bold leading-[120%]">roy kyosi just shared 5 portions of nasi
                 kicau.
               </div>
-              <div class="text-sm text-[#8F8F8F] font-manrope font-medium">2 mins ago • Panjer</div>
+              <div class="text-xs md:text-sm text-[#8F8F8F] font-manrope font-medium">2 mins ago • Panjer</div>
             </div>
           </div>
 
           <div class="flex flex-row">
             <svg class="mt-1.5 shrink-0 relative z-10" width="6" height="6" viewBox="0 0 6 6" fill="none"
-                 xmlns="http://www.w3.org/2000/svg">
-              <rect width="6" height="6" rx="3" fill="#0F5238"/>
+              xmlns="http://www.w3.org/2000/svg">
+              <rect width="6" height="6" rx="3" fill="#0F5238" />
             </svg>
-            <div class="flex flex-col items-start ml-2 gap-1">
-              <div class="text-base font-manrope font-bold leading-[120%]">Kmng dra just shared 2 portions of Mie
+            <div class="flex flex-col items-start ml-3 md:ml-2 gap-1">
+              <div class="text-sm md:text-base font-manrope font-bold leading-[120%]">Kmng dra just shared 2 portions of Mie
                 goreng.
               </div>
-              <div class="text-sm text-[#8F8F8F] font-manrope font-medium">2 mins ago • Panjer</div>
+              <div class="text-xs md:text-sm text-[#8F8F8F] font-manrope font-medium">2 mins ago • Panjer</div>
             </div>
           </div>
         </div>
-        <button routerLink="/discover-food" class="text-sm font-semibold bg-white rounded-xl border border-[#DADADA] px-4 py-2 cursor-pointer transition hover:bg-gray-50">Load More</button>
+        <button routerLink="/discover-food"
+          class="w-full lg:w-auto text-sm font-semibold bg-white rounded-xl border border-[#DADADA] px-4 py-3 md:py-2 cursor-pointer transition hover:bg-gray-50">
+          Load More
+        </button>
       </div>
     </div>
   </div>
@@ -166,55 +171,54 @@
 
 <section navbarTheme="light">
   <div class="flex flex-col gap-5">
-    <div class="flex flex-row justify-between px-10 pt-15">
-      <div class="text-[#09090B] text-xl font-semibold tracking-[-4%]">
+    <div class="flex flex-row items-center justify-between px-4 md:px-10 pt-10 md:pt-15">
+      <div class="text-[#09090B] text-lg md:text-xl font-semibold tracking-[-4%]">
         Recent Taken
       </div>
-      <div class="flex flex-row items-center gap-3">
+      <div class="hidden md:flex flex-row items-center gap-3">
         <div class="text-sm text-[#8F8F8F] font-normal font-ibm">
           VIEW ALL LISTINGS
         </div>
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4.16602 10H15.8327M9.99935 15.8334L15.8327 10L9.99935 4.16669" stroke="#B4B4B4"
-                stroke-width="1.6625" stroke-linecap="round" stroke-linejoin="round"/>
+            stroke-width="1.6625" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <div class="md:hidden">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.16602 10H15.8327M9.99935 15.8334L15.8327 10L9.99935 4.16669" stroke="#B4B4B4" stroke-width="1.6625" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </div>
     </div>
-    <div class="flex flex-row gap-8 overflow-x-auto pb-10 mx-10 no-scrollbar cursor-grab">
+    <div class="flex flex-row gap-4 md:gap-8 overflow-x-auto pb-10 px-4 md:px-10 no-scrollbar cursor-grab">
       @for (card of foods(); track $index) {
-        <div class="flex min-w-[380px] flex-col overflow-hidden rounded-2xl">
-          <img
-            [src]="card.image"
-            class="h-[240px] w-full object-cover"
-            [alt]="card.alt"
-          />
+      <div class="flex min-w-[320px] md:min-w-[380px] flex-col overflow-hidden rounded-2xl h-[420px] md:h-[460px]">
+        <img [src]="card.image" class="h-[200px] md:h-[240px] w-full object-cover shrink-0" [alt]="card.alt" />
 
-          <div class="flex flex-col justify-between bg-[#D9D9D9]/10 gap-5">
-            <div class="space-y-3 px-6 py-4">
-              <div class="text-xl font-bold text-[#0F5238]">
-                {{ card.title }}
-              </div>
-
-              <div class="text-sm leading-7 text-[#404943] font-manrope">
-                {{ card.description }}
-              </div>
+        <div class="flex flex-col justify-between bg-[#D9D9D9]/10 gap-4 md:gap-5 h-full">
+          <div class="space-y-2 md:space-y-3 px-5 md:px-6 py-4">
+            <div class="text-lg md:text-xl font-bold text-[#0F5238]">
+              {{ card.title }}
             </div>
 
-            <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-6 py-5">
-              <div class="text-md font-bold text-[#634019] font-manrope">
-                {{ card.distance }}
-              </div>
-
-              <button
-                [routerLink]="card.route"
-                class="rounded-full bg-[#0F5238] px-6 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
-                View Details
-              </button>
+            <div class="text-sm leading-6 md:leading-7 text-[#404943] font-manrope line-clamp-1">
+              {{ card.description }}
             </div>
           </div>
+
+          <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-5 md:px-6 py-4 md:py-5">
+            <div class="text-sm md:text-md font-bold text-[#634019] font-manrope">
+              {{ card.distance }}
+            </div>
+
+            <button [routerLink]="card.route"
+              class="rounded-full bg-[#0F5238] px-5 md:px-6 py-2 md:py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
+              View Details
+            </button>
+          </div>
         </div>
+      </div>
       }
     </div>
   </div>
 </section>
-

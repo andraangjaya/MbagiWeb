@@ -1,159 +1,121 @@
 @if (foodDetail(); as food) {
-<div class="flex flex-col gap-[40px] mt-20 mb-20">
-  <div class="flex flex-col items-center">
-    <div class="flex flex-col gap-[45px]">
-      <div class="flex flex-col ">
-        <img src="images/banner.jpg" alt="view-details" class="w-[1680px] h-[335px] ">
-        <div class="w-full flex flex-row justify-between pt-[16px] px-[20px] border-b border-b-[#DADADA]">
-          <div class="flex flex-col w-[694px]">
-            <div class="flex flex-col items-center">
-              <div class="flex flex-col gap-[32px] pb-[40px]">
-                <div class="flex flex-col gap-[16px]">
-                  <p class="font-semibold text-[40px] leading-[120%] tracking-[-4%] text-[#09090B]">{{ food.title }}
-                    - {{ food.location }}</p>
-                  <p class="font-manrope text-base leading-[150%] text-[#8F8F8F] font-medium">{{ food.category }} bag
-                    mix</p>
+<div class="flex flex-col gap-8 md:gap-[40px] pt-24 md:pt-32 pb-20 px-4 md:px-10 xl:px-20 max-w-[1680px] mx-auto">
+  <div class="flex flex-col items-center w-full">
+    <div class="flex flex-col gap-8 md:gap-[45px] w-full">
+      <div class="flex flex-col w-full">
+        <img src="images/banner.jpg" alt="view-details" class="w-full h-[200px] md:h-[335px] object-cover rounded-2xl">
+        <div class="w-full flex flex-col md:flex-row justify-between pt-6 md:pt-[16px] px-2 md:px-[20px] border-b border-b-[#DADADA] gap-6 md:gap-0 pb-6 md:pb-0">
+          <div class="flex flex-col w-full md:w-auto">
+            <div class="flex flex-col items-start md:items-center">
+              <div class="flex flex-col gap-6 md:gap-[32px] md:pb-[40px] w-full">
+                <div class="flex flex-col gap-2 md:gap-[16px]">
+                  <p class="font-semibold text-2xl md:text-[40px] leading-tight md:leading-[120%] tracking-[-4%] text-[#09090B]">{{ food.title }} - {{ food.location }}</p>
+                  <p class="font-manrope text-sm md:text-base leading-[150%] text-[#8F8F8F] font-medium">{{ food.category }} bag mix</p>
                 </div>
 
                 <div class="flex flex-col gap-2">
-                  <div class="flex flex-col gap-[8px]">
-
-                    <div class="flex flex-row gap-[12px]">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M4 10.1433C4 5.64588 7.58172 2 12 2C16.4183 2 20 5.64588 20 10.1433C20 14.6055 17.4467 19.8124 13.4629 21.6744C12.5343 22.1085 11.4657 22.1085 10.5371 21.6744C6.55332 19.8124 4 14.6055 4 10.1433Z"
-                          stroke="#444444" stroke-width="1.5" />
-                        <path
-                          d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
-                          stroke="#444444" stroke-width="1.5" />
+                  <div class="flex flex-col gap-2 md:gap-[8px]">
+                    <div class="flex flex-row gap-[12px] items-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+                        <path d="M4 10.1433C4 5.64588 7.58172 2 12 2C16.4183 2 20 5.64588 20 10.1433C20 14.6055 17.4467 19.8124 13.4629 21.6744C12.5343 22.1085 11.4657 22.1085 10.5371 21.6744C6.55332 19.8124 4 14.6055 4 10.1433Z" stroke="#444444" stroke-width="1.5" />
+                        <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#444444" stroke-width="1.5" />
                       </svg>
-                      <p class="font-manrope text-base leading-[150%] text-[#444444] font-medium">{{ food.location }}
-                      </p>
+                      <p class="font-manrope text-sm md:text-base leading-[150%] text-[#444444] font-medium">{{ food.location }}</p>
                     </div>
-                    <div class="flex flex-row gap-[12px]">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                          stroke="#444444" stroke-width="1.5" />
-                        <path d="M12 8V12L14.5 14.5" stroke="#444444" stroke-width="1.5" stroke-linecap="round"
-                          stroke-linejoin="round" />
+                    <div class="flex flex-row gap-[12px] items-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#444444" stroke-width="1.5" />
+                        <path d="M12 8V12L14.5 14.5" stroke="#444444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-
-                      <p class="font-manrope text-base leading-[150%] text-[#444444] font-medium">{{
-                        food.timeOperational }}
-                      </p>
+                      <p class="font-manrope text-sm md:text-base leading-[150%] text-[#444444] font-medium">{{ food.timeOperational }}</p>
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
-          <div
-            class="flex flex-row w-[308px] h-[88px] items-center justify-center gap-[20px] border border-[#DADADA] bg-[#FAFAFA] rounded-[16px]">
+          <div class="flex flex-row w-full md:w-[308px] h-auto md:h-[88px] p-4 md:p-0 items-center justify-center gap-4 md:gap-[20px] border border-[#DADADA] bg-[#FAFAFA] rounded-[16px]">
             <div class="">
-              <img src="images/barcode2.png" alt="" class="w-[56px] h-[56px]">
+              <img src="images/barcode2.png" alt="" class="w-12 h-12 md:w-[56px] md:h-[56px]">
             </div>
             <div class="flex flex-col">
-              <p class="font-medium font-manrope text-[20px] leading-[120%] text-[#09090B]">Eat Well, Waste Less</p>
-              <p class="font-medium font-manrope text-[16px] leading-[120%] text-[#8F8F8F]">Scan to get directions</p>
+              <p class="font-medium font-manrope text-lg md:text-[20px] leading-[120%] text-[#09090B]">Eat Well, Waste Less</p>
+              <p class="font-medium font-manrope text-sm md:text-[16px] leading-[120%] text-[#8F8F8F]">Scan to get directions</p>
             </div>
           </div>
         </div>
-
       </div>
 
-      <div class="flex flex-row justify-between">
-
-        <div class="flex flex-col w-[651px] gap-[16px]">
-          <div class="flex flex-col py-[20px]">
-            <div class="flex flex-col gap-[32px]">
-              <p
-                class="font-bold text-base font-manrope leading-[120%] text-white bg-[#2B8056] w-fit py-[8px] px-[16px] rounded-[322px]">
-                What’s inside</p>
-              <p
-                class="font-manrope text-base font-medium leading-[150%] text-[#1A1C18]/60 w-[500px] px-[20px] border-l border-l-[#DADADA]">
-                {{ food.description }}</p>
-            </div>
-          </div>
-
-          <div class="flex flex-col py-[20px]">
-
-            <div class="flex flex-col gap-[32px]">
-              <p
-                class="font-bold text-base font-manrope leading-[120%] text-white bg-[#2B8056] w-fit py-[8px] px-[16px] rounded-[322px]">
-                Make a Claim</p>
-              <div class="flex flex-col border-l border-l-[#DADADA] gap-[12px]">
-                <p class="font-manrope text-base font-bold leading-[120%] text-[#2D6A4F] w-[500px] px-[20px]">Step 1:
-                  Check Your Location</p>
-                <p class="font-manrope text-base font-medium leading-[150%] text-[#1A1C18]/60 w-[500px] px-[20px]">Find
-                  nearby partner stores and check the distance to ensure you can easily make it to the pickup spot.</p>
-              </div>
-
-              <div class="flex flex-col border-l border-l-[#DADADA] gap-[12px]">
-                <p class="font-manrope text-base font-bold leading-[120%] text-[#2D6A4F] w-[500px] px-[20px]">Step 2:
-                  Reserve Your Meal & Select Quantity</p>
-                <p class="font-manrope text-base font-medium leading-[150%] text-[#1A1C18]/60 w-[500px] px-[20px]">Click
-                  the "Claim" button to generate your pickup QR code. Select the number of portions you want, keeping in
-                  mind to only take what you can eat so no food goes to waste!</p>
-              </div>
-
-              <div class="flex flex-col border-l border-l-[#DADADA] gap-[12px]">
-                <p class="font-manrope text-base font-bold leading-[120%] text-[#2D6A4F] w-[500px] px-[20px]">Step 3:
-                  Pick Up & Scan Before It Expires</p>
-                <p class="font-manrope text-base font-medium leading-[150%] text-[#1A1C18]/60 w-[500px] px-[20px]">Head
-                  over to the location before the reservation timer runs out. When you arrive, simply present your QR
-                  code at the counter to scan and collect your rescued food.</p>
-              </div>
-
-              <div class="flex flex-col border-l border-l-[#DADADA] gap-[12px]">
-                <p class="font-manrope text-base font-bold leading-[120%] text-[#2D6A4F] w-[500px] px-[20px]">Step 4:
-                  Enjoy Your Meal!</p>
-                <p class="font-manrope text-base font-medium leading-[150%] text-[#1A1C18]/60 w-[500px] px-[20px]">You
-                  just successfully rescued a meal and helped reduce food waste. Thank you for making a difference—enjoy
-                  your food and have a wonderful day!</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex flex-col py-[20px]">
-            <div class="flex flex-col gap-[32px]">
-              <p
-                class="font-bold text-base font-manrope leading-[120%] text-white bg-[#2B8056] w-fit py-[8px] px-[16px] rounded-[322px]">
-                What you need to know</p>
-              <p
-                class="font-manrope text-base font-medium leading-[150%] text-[#1A1C18]/60 w-[500px] px-[20px] border-l border-l-[#DADADA]">
-                <span class="font-bold leading-[120%]">Keep Your QR</span> Code Ready You will need to show the QR code
-                on your phone at the register to claim your
-                food, so make sure your device is charged and ready to scan.
+      <div class="flex flex-col xl:flex-row justify-between w-full gap-10 xl:gap-0">
+        <div class="flex flex-col w-full xl:w-[55%] gap-6 md:gap-[16px]">
+          <div class="flex flex-col py-2 md:py-[20px]">
+            <div class="flex flex-col gap-6 md:gap-[32px]">
+              <p class="font-bold text-sm md:text-base font-manrope leading-[120%] text-white bg-[#2B8056] w-fit py-2 md:py-[8px] px-4 md:px-[16px] rounded-[322px]">
+                What’s inside
+              </p>
+              <p class="font-manrope text-sm md:text-base font-medium leading-[150%] text-[#1A1C18]/60 w-full md:max-w-[500px] px-4 md:px-[20px] border-l border-l-[#DADADA]">
+                {{ food.description }}
               </p>
             </div>
           </div>
 
-          <div class="flex flex-col py-[20px] w-[651px]">
-            <div class="flex flex-col gap-[20px]">
-              <p
-                class="font-bold text-base font-manrope leading-[120%] text-white bg-[#2B8056] w-fit py-[8px] px-[16px] rounded-[322px]">
-                Quick tips for pickups</p>
+          <div class="flex flex-col py-2 md:py-[20px]">
+            <div class="flex flex-col gap-6 md:gap-[32px]">
+              <p class="font-bold text-sm md:text-base font-manrope leading-[120%] text-white bg-[#2B8056] w-fit py-2 md:py-[8px] px-4 md:px-[16px] rounded-[322px]">
+                Make a Claim
+              </p>
+              
+              <div class="flex flex-col border-l border-l-[#DADADA] gap-2 md:gap-[12px]">
+                <p class="font-manrope text-sm md:text-base font-bold leading-[120%] text-[#2D6A4F] w-full px-4 md:px-[20px]">Step 1: Check Your Location</p>
+                <p class="font-manrope text-sm md:text-base font-medium leading-[150%] text-[#1A1C18]/60 w-full md:max-w-[500px] px-4 md:px-[20px]">Find nearby partner stores and check the distance to ensure you can easily make it to the pickup spot.</p>
+              </div>
 
-              <div class="flex flex-col gap-[16px]">
-                <div class="w-max bg-[#FAFAFA] border-[#DADADA] border px-[16px]  pt-[16px] pb-[24px] rounded-[8px]">
-                  <div class="flex flex-col gap-[12px] w-[651px]">
-                    <p class="font-manrope text-base font-bold leading-[120%] text-[#2D6A4F] w-[500px] ]">Arrive during
-                      the window</p>
-                    <p class="font-manrope text-base font-medium leading-[150%] text-[#1A1C18]/60 w-[619px]">Make sure
-                      to check the specific collection time slot in your app, as stores usually have a strict
-                      15-to-30-minute window at the end of the day.</p>
+              <div class="flex flex-col border-l border-l-[#DADADA] gap-2 md:gap-[12px]">
+                <p class="font-manrope text-sm md:text-base font-bold leading-[120%] text-[#2D6A4F] w-full px-4 md:px-[20px]">Step 2: Reserve Your Meal & Select Quantity</p>
+                <p class="font-manrope text-sm md:text-base font-medium leading-[150%] text-[#1A1C18]/60 w-full md:max-w-[500px] px-4 md:px-[20px]">Click the "Claim" button to generate your pickup QR code. Select the number of portions you want, keeping in mind to only take what you can eat so no food goes to waste!</p>
+              </div>
+
+              <div class="flex flex-col border-l border-l-[#DADADA] gap-2 md:gap-[12px]">
+                <p class="font-manrope text-sm md:text-base font-bold leading-[120%] text-[#2D6A4F] w-full px-4 md:px-[20px]">Step 3: Pick Up & Scan Before It Expires</p>
+                <p class="font-manrope text-sm md:text-base font-medium leading-[150%] text-[#1A1C18]/60 w-full md:max-w-[500px] px-4 md:px-[20px]">Head over to the location before the reservation timer runs out. When you arrive, simply present your QR code at the counter to scan and collect your rescued food.</p>
+              </div>
+
+              <div class="flex flex-col border-l border-l-[#DADADA] gap-2 md:gap-[12px]">
+                <p class="font-manrope text-sm md:text-base font-bold leading-[120%] text-[#2D6A4F] w-full px-4 md:px-[20px]">Step 4: Enjoy Your Meal!</p>
+                <p class="font-manrope text-sm md:text-base font-medium leading-[150%] text-[#1A1C18]/60 w-full md:max-w-[500px] px-4 md:px-[20px]">You just successfully rescued a meal and helped reduce food waste. Thank you for making a difference—enjoy your food and have a wonderful day!</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col py-2 md:py-[20px]">
+            <div class="flex flex-col gap-6 md:gap-[32px]">
+              <p class="font-bold text-sm md:text-base font-manrope leading-[120%] text-white bg-[#2B8056] w-fit py-2 md:py-[8px] px-4 md:px-[16px] rounded-[322px]">
+                What you need to know
+              </p>
+              <p class="font-manrope text-sm md:text-base font-medium leading-[150%] text-[#1A1C18]/60 w-full md:max-w-[500px] px-4 md:px-[20px] border-l border-l-[#DADADA]">
+                <span class="font-bold leading-[120%]">Keep Your QR</span> Code Ready You will need to show the QR code on your phone at the register to claim your food, so make sure your device is charged and ready to scan.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col py-2 md:py-[20px] w-full">
+            <div class="flex flex-col gap-4 md:gap-[20px]">
+              <p class="font-bold text-sm md:text-base font-manrope leading-[120%] text-white bg-[#2B8056] w-fit py-2 md:py-[8px] px-4 md:px-[16px] rounded-[322px]">
+                Quick tips for pickups
+              </p>
+
+              <div class="flex flex-col gap-4 md:gap-[16px] w-full">
+                <div class="w-full bg-[#FAFAFA] border-[#DADADA] border px-4 md:px-[16px] pt-4 md:pt-[16px] pb-6 md:pb-[24px] rounded-[8px]">
+                  <div class="flex flex-col gap-2 md:gap-[12px] w-full">
+                    <p class="font-manrope text-sm md:text-base font-bold leading-[120%] text-[#2D6A4F] w-full">Arrive during the window</p>
+                    <p class="font-manrope text-sm md:text-base font-medium leading-[150%] text-[#1A1C18]/60 w-full">Make sure to check the specific collection time slot in your app, as stores usually have a strict 15-to-30-minute window at the end of the day.</p>
                   </div>
                 </div>
 
-                <div class="w-max bg-[#FAFAFA] border-[#DADADA] border px-[16px]  pt-[16px] pb-[24px] rounded-[8px]">
-                  <div class="flex flex-col gap-[12px] w-[651px]">
-                    <p class="font-manrope text-base font-bold leading-[120%] text-[#2D6A4F] w-[500px] ]">Arrive during
-                      the window</p>
-                    <p class="font-manrope text-base font-medium leading-[150%] text-[#1A1C18]/60 w-[619px]">Make sure
-                      to check the specific collection time slot in your app, as stores usually have a strict
-                      15-to-30-minute window at the end of the day.</p>
+                <div class="w-full bg-[#FAFAFA] border-[#DADADA] border px-4 md:px-[16px] pt-4 md:pt-[16px] pb-6 md:pb-[24px] rounded-[8px]">
+                  <div class="flex flex-col gap-2 md:gap-[12px] w-full">
+                    <p class="font-manrope text-sm md:text-base font-bold leading-[120%] text-[#2D6A4F] w-full">Arrive during the window</p>
+                    <p class="font-manrope text-sm md:text-base font-medium leading-[150%] text-[#1A1C18]/60 w-full">Make sure to check the specific collection time slot in your app, as stores usually have a strict 15-to-30-minute window at the end of the day.</p>
                   </div>
                 </div>
               </div>
@@ -161,21 +123,19 @@
           </div>
         </div>
 
-        <div class="flex flex-col gap-[80px]">
-
-          <div class="flex flex-row w-[820px] gap-[20px]">
-
+        <div class="flex flex-col gap-10 md:gap-[80px] w-full xl:w-[40%]">
+          <div class="flex flex-col md:flex-row xl:flex-col w-full gap-6 md:gap-[20px]">
             @for (card of listingFoods().slice(0, 1); track $index) {
-              <div class="flex flex-col overflow-hidden rounded-t-2xl w-[400px] h-[548px]">
-                <img [src]="card.image" class="h-[290px] w-full object-cover" [alt]="card.alt" />
+              <div class="flex flex-col overflow-hidden rounded-2xl w-full md:w-1/2 xl:w-full border border-gray-100 shadow-sm">
+                <img [src]="card.image" class="h-[200px] md:h-[290px] w-full object-cover shrink-0" [alt]="card.alt" />
 
-                <div class="flex flex-col justify-between bg-[#D9D9D9]/10 gap-5">
-                  <div class="space-y-3 px-6 py-4">
-                    <div class="text-xl font-bold text-[#0F5238]">
+                <div class="flex flex-col justify-between bg-[#D9D9D9]/10 gap-4 md:gap-5 h-full">
+                  <div class="space-y-2 md:space-y-3 px-5 md:px-6 py-4">
+                    <div class="text-lg md:text-xl font-bold text-[#0F5238]">
                       {{ card.title }}
                     </div>
 
-                    <div class="text-sm leading-7 text-[#404943] font-manrope line-clamp-2">
+                    <div class="text-sm leading-6 md:leading-7 text-[#404943] font-manrope line-clamp-2">
                       {{ card.description }}
                     </div>
 
@@ -184,13 +144,13 @@
                     </div>
                   </div>
 
-                  <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-6 py-5">
-                    <div class="text-md font-bold text-[#634019] font-manrope">
+                  <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-5 md:px-6 py-4 md:py-5">
+                    <div class="text-sm md:text-md font-bold text-[#634019] font-manrope">
                       {{ card.distance }}
                     </div>
 
                     <button [routerLink]="card.route"
-                      class="rounded-full bg-[#0F5238] px-6 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
+                      class="rounded-full bg-[#0F5238] px-5 md:px-6 py-2 md:py-3 text-xs md:text-sm font-semibold text-white font-manrope transition hover:scale-105">
                       View Details
                     </button>
                   </div>
@@ -198,87 +158,79 @@
               </div>
             }
 
-
-            <div class="flex flex-col  h-[548px] ">
-              <div
-                class="flex w-[400px] h-[442px] items-center justify-center bg-[#FAFAFA] border border-[#DADADA] rounded-t-[16px]">
-                <img src="images/barcode.png" alt="" class="w-[360px] h-[360px]">
+            <div class="flex flex-col h-auto w-full md:w-1/2 xl:w-full border border-[#DADADA] rounded-[16px] overflow-hidden">
+              <div class="flex w-full h-[300px] md:h-[442px] items-center justify-center bg-[#FAFAFA]">
+                <img src="images/barcode.png" alt="" class="w-[200px] h-[200px] md:w-[360px] md:h-[360px] object-contain">
               </div>
-              <div
-                class="flex flex-row w-[400px] h-[106px] p-[20px] border border-[#DADADA] relative rounded-b-[16px]  ">
-                <div class="flex flex-col gap-[8px] ">
-                  <p class="text-[#222222] font-ibm font-semibold text-lg leading-[100%] tracking-[-4%] w-[162px]">Scan
-                    to Secure
-                    Your Meal</p>
-                  <p class="text-[#1A1C18]/60 font-manrope text-base leading-[140%] w-[261px]">Scan to get reveal the
-                    food location</p>
+              <div class="flex flex-col sm:flex-row w-full p-4 md:p-[20px] bg-white relative gap-4 sm:gap-0">
+                <div class="flex flex-col gap-2 md:gap-[8px]">
+                  <p class="text-[#222222] font-ibm font-semibold text-base md:text-lg leading-tight md:leading-[100%] tracking-[-4%] max-w-[162px]">
+                    Scan to Secure Your Meal
+                  </p>
+                  <p class="text-[#1A1C18]/60 font-manrope text-sm md:text-base leading-[140%] max-w-[261px]">
+                    Scan to get reveal the food location
+                  </p>
                 </div>
-                <p
-                  class="text-[#FF0000] font-manrope font-bold text-sm w-[115px] leading-[150%] whitespace-nowrap absolute right-5">
+                <p class="text-[#FF0000] font-manrope font-bold text-xs md:text-sm leading-[150%] sm:absolute sm:right-5 sm:top-5">
                   EXP IN 24 HOURS
                 </p>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="flex flex-col gap-[20px]">
-            <div class="flex flex-row justify-between items-center">
-              <p class="text-[#09090B] font-semibold text-2xl leading-[120%] tracking-[-4%]">Recommended for you</p>
-              <div class="flex flex-row gap-[12px] justify-center items-center">
-                <p class="font-ibm text-sm leading-[100%] tracking-[-4%] text-[#8F8F8F]">VIEW ALL LISTINGS</p>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4.16699 10.0003H15.8337M10.0003 15.8337L15.8337 10.0003L10.0003 4.16699" stroke="#B4B4B4"
-                    stroke-width="1.6625" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-
-              </div>
-
-            </div>
-
-            <div class="flex flex-row w-[820px] gap-[20px] overflow-x-auto overflow-y-hidden">
-
-              @for (card of listingFoods().slice(1); track $index) {
-                <div class="flex flex-col overflow-hidden rounded-t-2xl w-[400px] min-w-[400px] shrink-0 h-[548px]">
-                  <img [src]="card.image" class="h-[290px] w-full object-cover" [alt]="card.alt" />
-
-                  <div class="flex flex-col justify-between bg-[#D9D9D9]/10 gap-5">
-                    <div class="space-y-3 px-6 py-4">
-                      <div class="text-xl font-bold text-[#0F5238]">
-                        {{ card.title }}
-                      </div>
-
-                      <div class="text-sm leading-7 text-[#404943] font-manrope line-clamp-2">
-                        {{ card.description }}
-                      </div>
-
-                      <div class="text-xs font-medium text-[#707973] font-manrope line-clamp-1">
-                        {{ card.location }} | {{ card.timeOperational }}
-                      </div>
-                    </div>
-
-                    <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-6 py-5">
-                      <div class="text-md font-bold text-[#634019] font-manrope">
-                        {{ card.distance }}
-                      </div>
-
-                      <button [routerLink]="card.route"
-                        class="rounded-full bg-[#0F5238] px-6 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
-                        View Details
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              }
-
-
-
-            </div>
-
+      <div class="flex flex-col gap-4 md:gap-[20px] w-full">
+        <div class="flex flex-row justify-between items-center">
+          <p class="text-[#09090B] font-semibold text-lg md:text-2xl leading-[120%] tracking-[-4%]">Recommended for you</p>
+          <div class="hidden md:flex flex-row gap-[12px] justify-center items-center">
+            <p class="font-ibm text-sm leading-[100%] tracking-[-4%] text-[#8F8F8F]">VIEW ALL LISTINGS</p>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.16699 10.0003H15.8337M10.0003 15.8337L15.8337 10.0003L10.0003 4.16699" stroke="#B4B4B4" stroke-width="1.6625" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="md:hidden">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.16699 10.0003H15.8337M10.0003 15.8337L15.8337 10.0003L10.0003 4.16699" stroke="#B4B4B4" stroke-width="1.6625" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
           </div>
         </div>
 
-      </div>
+        <div class="flex flex-row w-full gap-4 md:gap-[20px] overflow-x-auto overflow-y-hidden pb-4">
+          @for (card of listingFoods().slice(1); track $index) {
+            <div class="flex flex-col overflow-hidden rounded-2xl w-[280px] md:w-[400px] min-w-[280px] md:min-w-[400px] shrink-0 h-auto md:h-[548px] border border-gray-100 shadow-sm">
+              <img [src]="card.image" class="h-[180px] md:h-[290px] w-full object-cover shrink-0" [alt]="card.alt" />
 
+              <div class="flex flex-col justify-between bg-[#D9D9D9]/10 gap-4 md:gap-5 h-full">
+                <div class="space-y-2 md:space-y-3 px-5 md:px-6 py-4">
+                  <div class="text-lg md:text-xl font-bold text-[#0F5238]">
+                    {{ card.title }}
+                  </div>
+
+                  <div class="text-sm leading-6 md:leading-7 text-[#404943] font-manrope line-clamp-2">
+                    {{ card.description }}
+                  </div>
+
+                  <div class="text-xs font-medium text-[#707973] font-manrope line-clamp-1">
+                    {{ card.location }} | {{ card.timeOperational }}
+                  </div>
+                </div>
+
+                <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-5 md:px-6 py-4 md:py-5">
+                  <div class="text-sm md:text-md font-bold text-[#634019] font-manrope">
+                    {{ card.distance }}
+                  </div>
+
+                  <button [routerLink]="card.route"
+                    class="rounded-full bg-[#0F5238] px-5 md:px-6 py-2 md:py-3 text-xs md:text-sm font-semibold text-white font-manrope transition hover:scale-105">
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
     </div>
   </div>
 </div>

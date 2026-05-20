@@ -1,330 +1,293 @@
-<div class="flex flex-col gap-[48px]">
-
-  <div class="relative overflow-hidden bg-[#2D6A4F]">
-    <div class="flex h-[500px] items-stretch">
-      <div class="flex w-[50%] pl-20">
+<div class="flex flex-col gap-8 md:gap-[48px] pt-20 md:pt-28 pb-10">
+  <div class="relative overflow-hidden bg-[#2D6A4F] mx-4 md:mx-0 rounded-2xl md:rounded-none">
+    <div class="flex flex-col md:flex-row h-auto md:h-[500px] items-stretch">
+      <div class="flex w-full md:w-[50%] px-6 md:pl-20 py-10 md:py-0">
         <div class="max-w-xl flex flex-col justify-center gap-5">
-          <div class="text-4xl font-extrabold text-white">
+          <div class="text-2xl md:text-4xl font-extrabold text-white">
             SELAMATKAN MAKANAN ENAK DI DEKAT MU
           </div>
 
-          <div class="text-lg text-[#A9BDB6]">
+          <div class="text-sm md:text-lg text-[#A9BDB6]">
             Temukan dan selamatkan makanan berkualitas dari resto favoritmu sebelum terbuang.
             Lebih murah, lebih ramah lingkungan.
           </div>
 
           <div class="">
-            <a routerLink=""
-              class="inline-flex items-center justify-center rounded-full border-2 border-white/30 bg-white/10 px-10 py-4 text-md font-bold text-white backdrop-blur-[6px]">
+            <a routerLink="/discover-food"
+              class="inline-flex items-center justify-center rounded-full border-2 border-white/30 bg-white/10 px-8 md:px-10 py-3 md:py-4 text-sm md:text-md font-bold text-white backdrop-blur-[6px]">
               Jelajahi Listing
             </a>
           </div>
         </div>
       </div>
 
-      <div class="relative h-full flex-1 overflow-hidden">
-        <div class="h-full w-full overflow-hidden" style="clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);">
-          <img src="/images/discover-banner.png" class="h-full w-full object-cover object-center"
-            alt="Discover food banner" />
+      <div class="relative h-[240px] md:h-full flex-1 overflow-hidden">
+        <div class="h-full w-full overflow-hidden" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);">
+          <div class="hidden md:block h-full w-full" style="clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);">
+            <img src="/images/discover-banner.png" class="h-full w-full object-cover object-center"
+              alt="Discover food banner" />
+          </div>
+          <img src="/images/discover-banner.png" class="md:hidden h-full w-full object-cover object-center"
+              alt="Discover food banner" />
         </div>
       </div>
     </div>
   </div>
   
-
-  <div class="items-center flex flex-col gap-[20px]">
-
+  <div class="items-start md:items-center flex flex-col gap-4 md:gap-[20px] px-4 md:px-10 xl:px-[130px] w-full">
     <div class="w-full flex flex-row items-center">
       <div class="flex flex-row items-center gap-[12px]">
-        <p class="font-ibm font-bold text-[18px] text-[#767774] pl-[130px]">[ Edit Profile ]</p>
+        <p class="font-ibm font-bold text-sm md:text-[18px] text-[#767774]">[ Edit Profile ]</p>
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7.5 4.16666L12.5 9.99999L7.5 15.8333" stroke="#1A1C18" stroke-width="1.5" stroke-linecap="round"
-            stroke-linejoin="round" />
+          <path d="M7.5 4.16666L12.5 9.99999L7.5 15.8333" stroke="#1A1C18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </div>
     </div>
-  
+  </div>
 
- 
-
-
-  <div class="flex flex-row justify-between gap-[162px]">
-
-  <div class="w-[1083px] flex flex-col gap-[40px]">
-
-    <div
-      class="flex flex-row w-full h-[254px] border border-[#D9D9D9] rounded-[36px] items-center justify-between px-[24px] py-[40px]">
-      <div class="flex flex-row w-[459.56px] h-[174px] items-center gap-[24px]">
-        <div class="w-[174px] h-[174px] rounded-full overflow-hidden border-2 border-[#2D6A4F]">
-          <img src="/images/profile.jpg" alt="profile" class="w-full h-full object-cover">
-        </div>
-
-        <div class="flex flex-col">
-          <p class="font-extrabold text-[36px] tracking-[-0.75px] leading-[36px]">{{ profileName }}</p>
-          <div class="flex flex-row gap-[4px] items-center">
-            <svg width="9" height="12" viewBox="0 0 10 12" fill="#404943" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M4.66667 5.83333C4.9875 5.83333 5.26215 5.7191 5.49062 5.49062C5.7191 5.26215 5.83333 4.9875 5.83333 4.66667C5.83333 4.34583 5.7191 4.07118 5.49062 3.84271C5.26215 3.61424 4.9875 3.5 4.66667 3.5C4.34583 3.5 4.07118 3.61424 3.84271 3.84271C3.61424 4.07118 3.5 4.34583 3.5 4.66667C3.5 4.9875 3.61424 5.26215 3.84271 5.49062C4.07118 5.7191 4.34583 5.83333 4.66667 5.83333ZM4.66667 10.1208C5.85278 9.03194 6.73264 8.04271 7.30625 7.15312C7.87986 6.26354 8.16667 5.47361 8.16667 4.78333C8.16667 3.72361 7.82882 2.8559 7.15312 2.18021C6.47743 1.50451 5.64861 1.16667 4.66667 1.16667C3.68472 1.16667 2.8559 1.50451 2.18021 2.18021C1.50451 2.8559 1.16667 3.72361 1.16667 4.78333C1.16667 5.47361 1.45347 6.26354 2.02708 7.15312C2.60069 8.04271 3.48056 9.03194 4.66667 10.1208ZM4.66667 11.6667C3.10139 10.3347 1.93229 9.09757 1.15937 7.95521C0.386458 6.81285 0 5.75556 0 4.78333C0 3.325 0.469097 2.16319 1.40729 1.29792C2.34549 0.432639 3.43194 0 4.66667 0C5.90139 0 6.98785 0.432639 7.92604 1.29792C8.86424 2.16319 9.33333 3.325 9.33333 4.78333C9.33333 5.75556 8.94688 6.81285 8.17396 7.95521C7.40104 9.09757 6.23194 10.3347 4.66667 11.6667Z"
-                fill="#404943" />
-            </svg>
-            <p class="text-[#404943] text-base tracking-normal font-manrope font-normal leading-[24px]">{{ profileTitle }} •
-              Joined March 2023</p>
+  <div class="flex flex-col xl:flex-row justify-between gap-10 xl:gap-[162px] px-4 md:px-10 xl:px-[130px]">
+    <div class="w-full xl:w-[1083px] flex flex-col gap-8 md:gap-[40px]">
+      <div class="flex flex-col md:flex-row w-full h-auto md:h-[254px] border border-[#D9D9D9] rounded-2xl md:rounded-[36px] items-center justify-between p-6 md:px-[24px] md:py-[40px] gap-6 md:gap-0 text-center md:text-left">
+        <div class="flex flex-col md:flex-row w-full md:w-[459.56px] h-auto md:h-[174px] items-center gap-4 md:gap-[24px]">
+          <div class="w-[120px] h-[120px] md:w-[174px] md:h-[174px] rounded-full overflow-hidden border-2 border-[#2D6A4F] shrink-0">
+            <img src="/images/profile.jpg" alt="profile" class="w-full h-full object-cover">
           </div>
-        </div>
-      </div>
-      <div class="w-[206.5px] h-[52px] flex flex-row items-center justify-center bg-[#2D6A4F] gap-[8px] rounded-[32px]">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M1.5 12H2.56875L9.9 4.66875L8.83125 3.6L1.5 10.9312V12ZM0 13.5V10.3125L9.9 0.43125C10.05 0.29375 10.2156 0.1875 10.3969 0.1125C10.5781 0.0375 10.7688 0 10.9688 0C11.1687 0 11.3625 0.0375 11.55 0.1125C11.7375 0.1875 11.9 0.3 12.0375 0.45L13.0688 1.5C13.2188 1.6375 13.3281 1.8 13.3969 1.9875C13.4656 2.175 13.5 2.3625 13.5 2.55C13.5 2.75 13.4656 2.94062 13.3969 3.12188C13.3281 3.30313 13.2188 3.46875 13.0688 3.61875L3.1875 13.5H0ZM12 2.55L10.95 1.5L12 2.55ZM9.35625 4.14375L8.83125 3.6L9.9 4.66875L9.35625 4.14375Z"
-            fill="white" />
-        </svg>
-        <button (click)="toggleCustomizeProfile()" class="font-manrope font-bold text-sm leading-[20px] text-white">Customize Profile</button>
-      </div>
-    </div>
 
-    <div class="flex flex-col">
-      <div class="w-full h-fit border border-[#D9D9D9] rounded-[36px] py-[60px]">
-        <div class="flex flex-col gap-[40px] ">
-          <div class="flex flex-row items-center justify-between px-[16px]">
-            <p class="font-ibm text-sm text-[#767774] font-bold">[ PERSONAL INFO ]</p>
-            <div class="w-[79.5px] h-[36px] bg-[#767774]/12 rounded-[32px] gap-[8px] flex items-center justify-center">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M1.5 12H2.56875L9.9 4.66875L8.83125 3.6L1.5 10.9312V12ZM0 13.5V10.3125L9.9 0.43125C10.05 0.29375 10.2156 0.1875 10.3969 0.1125C10.5781 0.0375 10.7688 0 10.9688 0C11.1687 0 11.3625 0.0375 11.55 0.1125C11.7375 0.1875 11.9 0.3 12.0375 0.45L13.0688 1.5C13.2188 1.6375 13.3281 1.8 13.3969 1.9875C13.4656 2.175 13.5 2.3625 13.5 2.55C13.5 2.75 13.4656 2.94062 13.3969 3.12188C13.3281 3.30313 13.2188 3.46875 13.0688 3.61875L3.1875 13.5H0ZM12 2.55L10.95 1.5L12 2.55ZM9.35625 4.14375L8.83125 3.6L9.9 4.66875L9.35625 4.14375Z"
-                  fill="#222222" />
+          <div class="flex flex-col items-center md:items-start">
+            <p class="font-extrabold text-2xl md:text-[36px] tracking-[-0.75px] leading-tight md:leading-[36px]">{{ profileName }}</p>
+            <div class="flex flex-row gap-2 items-center mt-2">
+              <svg width="9" height="12" viewBox="0 0 10 12" fill="#404943" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.66667 5.83333C4.9875 5.83333 5.26215 5.7191 5.49062 5.49062C5.7191 5.26215 5.83333 4.9875 5.83333 4.66667C5.83333 4.34583 5.7191 4.07118 5.49062 3.84271C5.26215 3.61424 4.9875 3.5 4.66667 3.5C4.34583 3.5 4.07118 3.61424 3.84271 3.84271C3.61424 4.07118 3.5 4.34583 3.5 4.66667C3.5 4.9875 3.61424 5.26215 3.84271 5.49062C4.07118 5.7191 4.34583 5.83333 4.66667 5.83333ZM4.66667 10.1208C5.85278 9.03194 6.73264 8.04271 7.30625 7.15312C7.87986 6.26354 8.16667 5.47361 8.16667 4.78333C8.16667 3.72361 7.82882 2.8559 7.15312 2.18021C6.47743 1.50451 5.64861 1.16667 4.66667 1.16667C3.68472 1.16667 2.8559 1.50451 2.18021 2.18021C1.50451 2.8559 1.16667 3.72361 1.16667 4.78333C1.16667 5.47361 1.45347 6.26354 2.02708 7.15312C2.60069 8.04271 3.48056 9.03194 4.66667 10.1208ZM4.66667 11.6667C3.10139 10.3347 1.93229 9.09757 1.15937 7.95521C0.386458 6.81285 0 5.75556 0 4.78333C0 3.325 0.469097 2.16319 1.40729 1.29792C2.34549 0.432639 3.43194 0 4.66667 0C5.90139 0 6.98785 0.432639 7.92604 1.29792C8.86424 2.16319 9.33333 3.325 9.33333 4.78333C9.33333 5.75556 8.94688 6.81285 8.17396 7.95521C7.40104 9.09757 6.23194 10.3347 4.66667 11.6667Z" fill="#404943" />
               </svg>
-              <button (click)="toggleCustomizeProfile()" class=" font-manrope font-bold text-sm">Edit</button>
-            </div>
-          </div>
-          <div class="flex flex-row gap-[160px] px-[47px]">
-            <div class="flex flex-col">
-              <p class="font-ibm font-normal text-[18px] leading-[20px] text-[#767774]">FULL NAME</p>
-              <p class="font-semibold text-[20px] text-[#000000]">TOM CROT</p>
-            </div>
-            <div class="flex flex-col">
-              <p class="font-ibm font-normal text-[18px] leading-[20px] text-[#767774]">MAIL ADDRESS</p>
-              <p class="font-semibold text-[20px] text-[#000000]">TOM CROT</p>
-            </div>
-            <div class="flex flex-col">
-              <p class="font-ibm font-normal text-[18px] leading-[20px] text-[#767774]">PHONE NUMBER</p>
-              <p class="font-semibold text-[20px] text-[#000000]">TOM CROT</p>
-            </div>
-            <div class="flex flex-col">
-              <p class="font-ibm font-normal text-[18px] leading-[20px] text-[#767774]">LOCATION</p>
-              <p class="font-semibold text-[20px] text-[#000000]">TOM CROT</p>
+              <p class="text-[#404943] text-sm md:text-base tracking-normal font-manrope font-normal">{{ profileTitle }} • Joined March 2023</p>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="flex flex-col">
-      <div class="w-full h-fit border border-[#D9D9D9] rounded-[36px] py-[40px]">
-        <div class="flex flex-col gap-[40px] ">
-          <div class="flex flex-row items-center justify-between px-[20px]">
-            <p class="font-ibm text-sm text-[#767774] font-bold">[ ACTIVE DONATIONS ]</p>
-            <div class="w-[131PX] h-[52px] bg-[#2D6A4F] rounded-[32px] gap-[8px] flex items-center justify-center">
-              <button class="font-semibold text-sm text-white">Lihat Semua</button>
-            </div>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-[32px] px-[24px] pb-[24px] w-full">
-      @for (card of activeDonations(); track $index) {
-            <div class="flex flex-col overflow-hidden rounded-t-2xl">
-              <img [src]="card.image" class="h-[200px] w-full object-cover" [alt]="card.alt" />
-
-              <div class="flex flex-col justify-between bg-[#FCFCF8] gap-5">
-                <div class="space-y-3 px-6 py-4">
-                  <div class="text-xl font-bold text-[#0F5238]">
-                    {{ card.title }}
-                  </div>
-
-                  <div class="text-sm leading-7 text-[#404943] font-manrope">
-                    {{ card.description }}
-                  </div>
-                </div>
-
-                <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-6 py-5">
-                  <div class="text-md font-bold text-[#634019] font-manrope">
-                    {{ card.distance }}
-                  </div>
-
-                  <button [routerLink]="card.route"
-                    class="rounded-full bg-[#0F5238] px-6 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
-                    Claim
-                  </button>
-                </div>
-              </div>
-            </div>
-            }
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="flex flex-col">
-      <div class="w-full h-fit border border-[#D9D9D9] rounded-[36px] py-[40px]">
-        <div class="flex flex-col gap-[40px] ">
-          <div class="flex flex-row items-center justify-between px-[20px]">
-            <p class="font-ibm text-sm text-[#767774] font-bold">[ RECENT UPLOUDS ]</p>
-            <div class="w-[131PX] h-[52px] bg-[#2D6A4F] rounded-[32px] gap-[8px] flex items-center justify-center">
-              <button class="font-semibold text-sm text-white">Lihat Semua</button>
-            </div>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-[32px] px-[24px] pb-[24px] w-full">
-      @for (card of activeDonations(); track $index) {
-            <div class="flex flex-col overflow-hidden rounded-t-2xl">
-              <img [src]="card.image" class="h-[200px] w-full object-cover" [alt]="card.alt" />
-
-              <div class="flex flex-col justify-between bg-[#FCFCF8] gap-5">
-                <div class="space-y-3 px-6 py-4">
-                  <div class="text-xl font-bold text-[#0F5238]">
-                    {{ card.title }}
-                  </div>
-
-                  <div class="text-sm leading-7 text-[#404943] font-manrope">
-                    {{ card.description }}
-                  </div>
-                </div>
-
-                <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-6 py-5">
-                  <div class="text-md font-bold text-[#634019] font-manrope">
-                    {{ card.distance }}
-                  </div>
-
-                  <button [routerLink]="card.route"
-                    class="rounded-full bg-[#0F5238] px-6 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
-                    Claim
-                  </button>
-                </div>
-              </div>
-            </div>
-            }
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="flex flex-col gap-[35px]">
-
-  <div class="w-[415px] h-fit border-[#D9D9D9]/20 border-2 rounded-[16px] p-[20px]">
-    <div class="border-[#BFC9C1]/15">
-      <div class="flex flex-col gap-[20px]">
-      <p class=" font-manrope text-[#404943] font-bold tracking-[0.7px] leading-20%">NEAREST COMMUNITY LOGS</p>
-      
-        <div class="flex flex-row gap-[10px]">
-          <svg width="6" height="50" viewBox="0 0 6 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="6" height="6" rx="3" fill="#0F5238"/>
-            <rect x="3" y="6" width="1" height="62.5" fill="#E2E3DB"/>
-            </svg>
-            <div class="flex flex-col gap-[4px]">
-            <p class="font-manrope font-bold text-base leading-[19.3px]">David laid just shared 2 portions of
-              vegetable curry.</p>
-              <p class="font-manrope text-xs text-[#404943]">2 mins ago • Panjer</p>
-            </div>
-        </div>
-        <div class="flex flex-row gap-[10px]">
-          <svg width="6" height="50" viewBox="0 0 6 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="6" height="6" rx="3" fill="#0F5238"/>
-            <rect x="3" y="6" width="1" height="62.5" fill="#E2E3DB"/>
-            </svg>
-            <div class="flex flex-col gap-[4px]">
-            <p class="font-manrope font-bold text-base leading-[19.3px]">roy kyosi just shared 5 portions of nasi kicau .</p>
-              <p class="font-manrope text-xs text-[#404943]">2 mins ago • Panjer</p>
-            </div>
-        </div>
-        <div class="flex flex-row gap-[10px]">
-          <svg width="6" height="50" viewBox="0 0 6 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="6" height="6" rx="3" fill="#0F5238"/>
-            <rect x="3" y="6" width="1" height="62.5" fill="#E2E3DB"/>
-            </svg>
-            <div class="flex flex-col gap-[4px]">
-            <p class="font-manrope font-bold text-base leading-[19.3px]">Kmng dra just shared 2 portions of
-              Mie goreng.</p>
-              <p class="font-manrope text-xs text-[#404943]">2 mins ago • Panjer</p>
-            </div>
-        </div>
-        <div class="flex flex-row gap-[10px]">
-          <svg width="6" height="50" viewBox="0 0 6 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="6" height="6" rx="3" fill="#0F5238"/>
-            <rect x="3" y="6" width="1" height="62.5" fill="#E2E3DB"/>
-            </svg>
-            <div class="flex flex-col gap-[4px]">
-            <p class="font-manrope font-bold text-base leading-[19.3px]">Jason Sunardi just shared 2 portions of
-              vegetable curry.</p>
-              <p class="font-manrope text-xs text-[#404943]">2 mins ago • Panjer</p>
-            </div>
-        </div>
-        <div class="flex flex-row gap-[10px]">
-          <svg width="6" height="50" viewBox="0 0 6 50  " fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="6" height="6" rx="3" fill="#2B694D"/>
-            <rect x="3" y="6" width="1" height="43.5" fill="#E2E3DB"/>
-            </svg>
-            
-            <div class="flex flex-col gap-[4px]">
-            <p class="font-manrope font-bold text-base leading-[19.3px]">Conato Bakery Surplus has been cleared.</p>
-              <p class="font-manrope text-xs text-[#404943]">15 mins ago • Pakerisan</p>
-            </div>
-        </div>
-        <div class="flex flex-row gap-[10px]">
-          <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="6" height="6" rx="3" fill="#BFC9C1"/>
-            </svg>
-            
-            <div class="flex flex-col gap-[4px]">
-            <p class="font-manrope font-bold text-base leading-[19.3px]">Big M Minimart was just
-              restocked with fresh greens.</p>
-              <p class="font-manrope text-xs text-[#404943]">45 mins ago • Renon</p>
-            </div>
-        </div>
-    </div>
-    </div>
-  </div>
-
-  <div class="w-[415px] h-fit border-[#D9D9D9]/20 border-2 rounded-[16px] p-[20px]">
-    <div class="flex flex-col gap-[24px]">
-      <div class="flex flex-row items-center gap-[8px]">
-        <svg width="15" height="20" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7.5 20C6.95 20 6.47917 19.8042 6.0875 19.4125C5.69583 19.0208 5.5 18.55 5.5 18H9.5C9.5 18.55 9.30417 19.0208 8.9125 19.4125C8.52083 19.8042 8.05 20 7.5 20ZM3.5 17V15H11.5V17H3.5ZM3.75 14C2.6 13.3167 1.6875 12.4 1.0125 11.25C0.3375 10.1 0 8.85 0 7.5C0 5.41667 0.729167 3.64583 2.1875 2.1875C3.64583 0.729167 5.41667 0 7.5 0C9.58333 0 11.3542 0.729167 12.8125 2.1875C14.2708 3.64583 15 5.41667 15 7.5C15 8.85 14.6625 10.1 13.9875 11.25C13.3125 12.4 12.4 13.3167 11.25 14H3.75ZM4.35 12H10.65C11.4 11.4667 11.9792 10.8083 12.3875 10.025C12.7958 9.24167 13 8.4 13 7.5C13 5.96667 12.4667 4.66667 11.4 3.6C10.3333 2.53333 9.03333 2 7.5 2C5.96667 2 4.66667 2.53333 3.6 3.6C2.53333 4.66667 2 5.96667 2 7.5C2 8.4 2.20417 9.24167 2.6125 10.025C3.02083 10.8083 3.6 11.4667 4.35 12Z" fill="black"/>
+        <div class="w-full md:w-[206.5px] h-[48px] md:h-[52px] flex flex-row items-center justify-center bg-[#2D6A4F] gap-[8px] rounded-full md:rounded-[32px] cursor-pointer hover:bg-[#1f4f39] transition-colors" (click)="toggleCustomizeProfile()">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.5 12H2.56875L9.9 4.66875L8.83125 3.6L1.5 10.9312V12ZM0 13.5V10.3125L9.9 0.43125C10.05 0.29375 10.2156 0.1875 10.3969 0.1125C10.5781 0.0375 10.7688 0 10.9688 0C11.1687 0 11.3625 0.0375 11.55 0.1125C11.7375 0.1875 11.9 0.3 12.0375 0.45L13.0688 1.5C13.2188 1.6375 13.3281 1.8 13.3969 1.9875C13.4656 2.175 13.5 2.3625 13.5 2.55C13.5 2.75 13.4656 2.94062 13.3969 3.12188C13.3281 3.30313 13.2188 3.46875 13.0688 3.61875L3.1875 13.5H0ZM12 2.55L10.95 1.5L12 2.55ZM9.35625 4.14375L8.83125 3.6L9.9 4.66875L9.35625 4.14375Z" fill="white" />
           </svg>
-        <p class="font-bold font-manrope tracking-[1.2px] text-xs leading-[16px]">DAILY TIPS</p>
-      </div>
-      <div class="w-[341px]">
-        <p class="font-manrope font-bold text-[32px] leading-[36px] text-[#000000]">
-          Reviving wilted greens in ice-cold water.
-        </p>
+          <button class="font-manrope font-bold text-sm leading-[20px] text-white bg-transparent border-none outline-none">Customize Profile</button>
+        </div>
       </div>
 
-      <div class="w-[341px] pb-[80px]">
-        <p class="font-manrope text-xl leading-[22.8px] text-[#000000]">
-          Submerge your greens in a bowl
-of ice-water for 15 minutes to
-crisp up cellular structures and
-restore texture.
-        </p>
+      <div class="flex flex-col">
+        <div class="w-full h-fit border border-[#D9D9D9] rounded-2xl md:rounded-[36px] py-6 md:py-[60px]">
+          <div class="flex flex-col gap-6 md:gap-[40px]">
+            <div class="flex flex-row items-center justify-between px-5 md:px-[16px]">
+              <p class="font-ibm text-xs md:text-sm text-[#767774] font-bold">[ PERSONAL INFO ]</p>
+              <div class="w-[79.5px] h-[36px] bg-[#767774]/12 rounded-[32px] gap-[8px] flex items-center justify-center cursor-pointer hover:bg-gray-200 transition" (click)="toggleCustomizeProfile()">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.5 12H2.56875L9.9 4.66875L8.83125 3.6L1.5 10.9312V12ZM0 13.5V10.3125L9.9 0.43125C10.05 0.29375 10.2156 0.1875 10.3969 0.1125C10.5781 0.0375 10.7688 0 10.9688 0C11.1687 0 11.3625 0.0375 11.55 0.1125C11.7375 0.1875 11.9 0.3 12.0375 0.45L13.0688 1.5C13.2188 1.6375 13.3281 1.8 13.3969 1.9875C13.4656 2.175 13.5 2.3625 13.5 2.55C13.5 2.75 13.4656 2.94062 13.3969 3.12188C13.3281 3.30313 13.2188 3.46875 13.0688 3.61875L3.1875 13.5H0ZM12 2.55L10.95 1.5L12 2.55ZM9.35625 4.14375L8.83125 3.6L9.9 4.66875L9.35625 4.14375Z" fill="#222222" />
+                </svg>
+                <button class="font-manrope font-bold text-sm bg-transparent outline-none border-none">Edit</button>
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-row flex-wrap gap-6 md:gap-[40px] xl:gap-[100px] px-5 md:px-[47px]">
+              <div class="flex flex-col">
+                <p class="font-ibm font-normal text-sm md:text-[18px] md:leading-[20px] text-[#767774]">FULL NAME</p>
+                <p class="font-semibold text-lg md:text-[20px] text-[#000000]">{{ profileName }}</p>
+              </div>
+              <div class="flex flex-col">
+                <p class="font-ibm font-normal text-sm md:text-[18px] md:leading-[20px] text-[#767774]">MAIL ADDRESS</p>
+                <p class="font-semibold text-lg md:text-[20px] text-[#000000]">{{ profileName | lowercase | slice:0:3 }}@example.com</p>
+              </div>
+              <div class="flex flex-col">
+                <p class="font-ibm font-normal text-sm md:text-[18px] md:leading-[20px] text-[#767774]">PHONE NUMBER</p>
+                <p class="font-semibold text-lg md:text-[20px] text-[#000000]">+62 812-3456-7890</p>
+              </div>
+              <div class="flex flex-col">
+                <p class="font-ibm font-normal text-sm md:text-[18px] md:leading-[20px] text-[#767774]">LOCATION</p>
+                <p class="font-semibold text-lg md:text-[20px] text-[#000000]">{{ profileTitle }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="flex flex-row gap-[8px] items-center">
-        <p class="text-[#000000] font-manrope font-bold text-base">Learn More</p>
-        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5.83333 7L5.01667 6.15417L7.0875 4.08333H0V2.91667H7.0875L5.01667 0.845833L5.83333 0L9.33333 3.5L5.83333 7Z" fill="black"/>
-          </svg>          
+      <div class="flex flex-col">
+        <div class="w-full h-fit border border-[#D9D9D9] rounded-2xl md:rounded-[36px] py-6 md:py-[40px]">
+          <div class="flex flex-col gap-6 md:gap-[40px]">
+            <div class="flex flex-row items-center justify-between px-5 md:px-[20px]">
+              <p class="font-ibm text-xs md:text-sm text-[#767774] font-bold">[ ACTIVE DONATIONS ]</p>
+              <div class="w-fit md:w-[131px] h-[40px] md:h-[52px] bg-[#2D6A4F] rounded-full gap-[8px] flex items-center justify-center px-4 hover:bg-[#1f4f39] transition-colors cursor-pointer">
+                <button class="font-semibold text-xs md:text-sm text-white bg-transparent border-none outline-none">Lihat Semua</button>
+              </div>
+            </div>
+            <div class="flex flex-row overflow-x-auto overflow-y-hidden gap-6 md:gap-[32px] px-5 md:px-[24px] pb-4 md:pb-[24px] w-full">
+              @for (card of activeDonations(); track $index) {
+                <div class="flex flex-col overflow-hidden rounded-2xl w-[280px] md:w-[320px] shrink-0 h-auto md:h-[420px] border border-gray-100 shadow-sm">
+                  <img [src]="card.image" class="h-[160px] md:h-[200px] w-full object-cover shrink-0" [alt]="card.alt" />
+                  <div class="flex flex-col justify-between bg-[#FCFCF8] gap-4 md:gap-5 h-full">
+                    <div class="space-y-2 md:space-y-3 px-5 md:px-6 py-4">
+                      <div class="text-lg md:text-xl font-bold text-[#0F5238]">
+                        {{ card.title }}
+                      </div>
+                      <div class="text-xs md:text-sm leading-6 md:leading-7 text-[#404943] font-manrope line-clamp-2 md:line-clamp-1">
+                        {{ card.description }}
+                      </div>
+                    </div>
+                    <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-5 md:px-6 py-4 md:py-5">
+                      <div class="text-sm md:text-md font-bold text-[#634019] font-manrope">
+                        {{ card.distance }}
+                      </div>
+                      <button [routerLink]="card.route" class="rounded-full bg-[#0F5238] px-5 md:px-6 py-2 md:py-3 text-xs md:text-sm font-semibold text-white font-manrope transition hover:scale-105">
+                        Claim
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
       </div>
 
+      <div class="flex flex-col">
+        <div class="w-full h-fit border border-[#D9D9D9] rounded-2xl md:rounded-[36px] py-6 md:py-[40px]">
+          <div class="flex flex-col gap-6 md:gap-[40px]">
+            <div class="flex flex-row items-center justify-between px-5 md:px-[20px]">
+              <p class="font-ibm text-xs md:text-sm text-[#767774] font-bold">[ RECENT UPLOADS ]</p>
+              <div class="w-fit md:w-[131px] h-[40px] md:h-[52px] bg-[#2D6A4F] rounded-full gap-[8px] flex items-center justify-center px-4 hover:bg-[#1f4f39] transition-colors cursor-pointer">
+                <button class="font-semibold text-xs md:text-sm text-white bg-transparent border-none outline-none">Lihat Semua</button>
+              </div>
+            </div>
+            <div class="flex flex-row overflow-x-auto overflow-y-hidden gap-6 md:gap-[32px] px-5 md:px-[24px] pb-4 md:pb-[24px] w-full">
+              @for (card of activeDonations(); track $index) {
+                <div class="flex flex-col overflow-hidden rounded-2xl w-[280px] md:w-[320px] shrink-0 h-auto md:h-[420px] border border-gray-100 shadow-sm">
+                  <img [src]="card.image" class="h-[160px] md:h-[200px] w-full object-cover shrink-0" [alt]="card.alt" />
+                  <div class="flex flex-col justify-between bg-[#FCFCF8] gap-4 md:gap-5 h-full">
+                    <div class="space-y-2 md:space-y-3 px-5 md:px-6 py-4">
+                      <div class="text-lg md:text-xl font-bold text-[#0F5238]">
+                        {{ card.title }}
+                      </div>
+                      <div class="text-xs md:text-sm leading-6 md:leading-7 text-[#404943] font-manrope line-clamp-2 md:line-clamp-1">
+                        {{ card.description }}
+                      </div>
+                    </div>
+                    <div class="flex flex-row items-center justify-between border-t border-[#E2E3DB]/50 px-5 md:px-6 py-4 md:py-5">
+                      <div class="text-sm md:text-md font-bold text-[#634019] font-manrope">
+                        {{ card.distance }}
+                      </div>
+                      <button [routerLink]="card.route" class="rounded-full bg-[#0F5238] px-5 md:px-6 py-2 md:py-3 text-xs md:text-sm font-semibold text-white font-manrope transition hover:scale-105">
+                        Claim
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-6 md:gap-[35px] w-full xl:w-auto mt-8 xl:mt-0">
+      <div class="w-full xl:w-[415px] h-fit border-[#D9D9D9]/20 border-2 rounded-2xl md:rounded-[16px] p-6 md:p-[20px]">
+        <div class="border-[#BFC9C1]/15">
+          <div class="flex flex-col gap-5 md:gap-[20px]">
+            <p class="font-manrope text-[#404943] font-bold tracking-[0.7px] leading-tight text-sm md:text-base">NEAREST COMMUNITY LOGS</p>
+            <div class="flex flex-row gap-[10px]">
+              <svg width="6" height="50" viewBox="0 0 6 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+                <rect width="6" height="6" rx="3" fill="#0F5238"/>
+                <rect x="3" y="6" width="1" height="62.5" fill="#E2E3DB"/>
+              </svg>
+              <div class="flex flex-col gap-[4px]">
+                <p class="font-manrope font-bold text-sm md:text-base leading-snug">David laid just shared 2 portions of vegetable curry.</p>
+                <p class="font-manrope text-xs text-[#404943]">2 mins ago • Panjer</p>
+              </div>
+            </div>
+            <div class="flex flex-row gap-[10px]">
+              <svg width="6" height="50" viewBox="0 0 6 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+                <rect width="6" height="6" rx="3" fill="#0F5238"/>
+                <rect x="3" y="6" width="1" height="62.5" fill="#E2E3DB"/>
+              </svg>
+              <div class="flex flex-col gap-[4px]">
+                <p class="font-manrope font-bold text-sm md:text-base leading-snug">roy kyosi just shared 5 portions of nasi kicau.</p>
+                <p class="font-manrope text-xs text-[#404943]">2 mins ago • Panjer</p>
+              </div>
+            </div>
+            <div class="flex flex-row gap-[10px]">
+              <svg width="6" height="50" viewBox="0 0 6 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+                <rect width="6" height="6" rx="3" fill="#0F5238"/>
+                <rect x="3" y="6" width="1" height="62.5" fill="#E2E3DB"/>
+              </svg>
+              <div class="flex flex-col gap-[4px]">
+                <p class="font-manrope font-bold text-sm md:text-base leading-snug">Kmng dra just shared 2 portions of Mie goreng.</p>
+                <p class="font-manrope text-xs text-[#404943]">2 mins ago • Panjer</p>
+              </div>
+            </div>
+            <div class="flex flex-row gap-[10px]">
+              <svg width="6" height="50" viewBox="0 0 6 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+                <rect width="6" height="6" rx="3" fill="#0F5238"/>
+                <rect x="3" y="6" width="1" height="62.5" fill="#E2E3DB"/>
+              </svg>
+              <div class="flex flex-col gap-[4px]">
+                <p class="font-manrope font-bold text-sm md:text-base leading-snug">Jason Sunardi just shared 2 portions of vegetable curry.</p>
+                <p class="font-manrope text-xs text-[#404943]">2 mins ago • Panjer</p>
+              </div>
+            </div>
+            <div class="flex flex-row gap-[10px]">
+              <svg width="6" height="50" viewBox="0 0 6 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+                <rect width="6" height="6" rx="3" fill="#2B694D"/>
+                <rect x="3" y="6" width="1" height="43.5" fill="#E2E3DB"/>
+              </svg>
+              <div class="flex flex-col gap-[4px]">
+                <p class="font-manrope font-bold text-sm md:text-base leading-snug">Conato Bakery Surplus has been cleared.</p>
+                <p class="font-manrope text-xs text-[#404943]">15 mins ago • Pakerisan</p>
+              </div>
+            </div>
+            <div class="flex flex-row gap-[10px]">
+              <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+                <rect width="6" height="6" rx="3" fill="#BFC9C1"/>
+              </svg>
+              <div class="flex flex-col gap-[4px]">
+                <p class="font-manrope font-bold text-sm md:text-base leading-snug">Big M Minimart was just restocked with fresh greens.</p>
+                <p class="font-manrope text-xs text-[#404943]">45 mins ago • Renon</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full xl:w-[415px] h-fit border-[#D9D9D9]/20 border-2 rounded-2xl md:rounded-[16px] p-6 md:p-[20px]">
+        <div class="flex flex-col gap-6 md:gap-[24px]">
+          <div class="flex flex-row items-center gap-[8px]">
+            <svg width="15" height="20" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.5 20C6.95 20 6.47917 19.8042 6.0875 19.4125C5.69583 19.0208 5.5 18.55 5.5 18H9.5C9.5 18.55 9.30417 19.0208 8.9125 19.4125C8.52083 19.8042 8.05 20 7.5 20ZM3.5 17V15H11.5V17H3.5ZM3.75 14C2.6 13.3167 1.6875 12.4 1.0125 11.25C0.3375 10.1 0 8.85 0 7.5C0 5.41667 0.729167 3.64583 2.1875 2.1875C3.64583 0.729167 5.41667 0 7.5 0C9.58333 0 11.3542 0.729167 12.8125 2.1875C14.2708 3.64583 15 5.41667 15 7.5C15 8.85 14.6625 10.1 13.9875 11.25C13.3125 12.4 12.4 13.3167 11.25 14H3.75ZM4.35 12H10.65C11.4 11.4667 11.9792 10.8083 12.3875 10.025C12.7958 9.24167 13 8.4 13 7.5C13 5.96667 12.4667 4.66667 11.4 3.6C10.3333 2.53333 9.03333 2 7.5 2C5.96667 2 4.66667 2.53333 3.6 3.6C2.53333 4.66667 2 5.96667 2 7.5C2 8.4 2.20417 9.24167 2.6125 10.025C3.02083 10.8083 3.6 11.4667 4.35 12Z" fill="black"/>
+            </svg>
+            <p class="font-bold font-manrope tracking-[1.2px] text-xs leading-[16px]">DAILY TIPS</p>
+          </div>
+          <div class="w-full">
+            <p class="font-manrope font-bold text-2xl md:text-[32px] md:leading-[36px] text-[#000000]">
+              Reviving wilted greens in ice-cold water.
+            </p>
+          </div>
+
+          <div class="w-full pb-8 md:pb-[80px]">
+            <p class="font-manrope text-base md:text-xl md:leading-[22.8px] text-[#000000]">
+              Submerge your greens in a bowl of ice-water for 15 minutes to crisp up cellular structures and restore texture.
+            </p>
+          </div>
+
+          <div class="flex flex-row gap-[8px] items-center cursor-pointer group">
+            <p class="text-[#000000] font-manrope font-bold text-sm md:text-base group-hover:underline">Learn More</p>
+            <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-1 transition-transform">
+              <path d="M5.83333 7L5.01667 6.15417L7.0875 4.08333H0V2.91667H7.0875L5.01667 0.845833L5.83333 0L9.33333 3.5L5.83333 7Z" fill="black"/>
+            </svg>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-
-</div>
-</div>
 </div>
 
 @if (isCustomizeProfileOpen) {
-  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-    <div class="w-[400px] rounded-2xl bg-white p-6 shadow-xl">
+  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="w-full max-w-[400px] rounded-2xl bg-white p-6 shadow-xl">
       <div class="flex justify-between items-center mb-4">
         <h2 class="text-xl font-bold font-manrope">Customize Profile</h2>
-        <button (click)="toggleCustomizeProfile()" class="text-gray-500 hover:text-black">
+        <button (click)="toggleCustomizeProfile()" class="text-gray-500 hover:text-black bg-transparent border-none outline-none cursor-pointer">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M18 6L6 18M6 6l12 12"></path>
           </svg>
@@ -334,15 +297,15 @@ restore texture.
       <div class="flex flex-col gap-4">
         <div class="flex flex-col gap-1">
           <label class="font-semibold text-sm text-[#404943]">Full Name</label>
-          <input type="text" [(ngModel)]="profileName" class="rounded-xl border border-gray-300 p-2 font-manrope outline-none focus:border-[#2D6A4F]">
+          <input type="text" [(ngModel)]="profileName" class="rounded-xl border border-gray-300 p-3 font-manrope outline-none focus:border-[#2D6A4F]">
         </div>
         
         <div class="flex flex-col gap-1">
           <label class="font-semibold text-sm text-[#404943]">Location</label>
-          <input type="text" [(ngModel)]="profileTitle" class="rounded-xl border border-gray-300 p-2 font-manrope outline-none focus:border-[#2D6A4F]">
+          <input type="text" [(ngModel)]="profileTitle" class="rounded-xl border border-gray-300 p-3 font-manrope outline-none focus:border-[#2D6A4F]">
         </div>
         
-        <button (click)="toggleCustomizeProfile()" class="mt-4 w-full rounded-xl bg-[#2D6A4F] py-3 font-bold text-white transition hover:bg-[#1f4f39]">
+        <button (click)="toggleCustomizeProfile()" class="mt-4 w-full rounded-xl bg-[#2D6A4F] py-3 font-bold text-white transition hover:bg-[#1f4f39] border-none cursor-pointer">
           Save Changes
         </button>
       </div>

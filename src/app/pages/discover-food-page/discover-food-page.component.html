@@ -1,30 +1,28 @@
 <section navbarTheme="dark">
   <div class="relative overflow-hidden bg-[#2D6A4F]">
-    <div class="flex h-[500px] items-stretch">
-      <div class="flex w-[50%] pl-20">
+    <div class="flex flex-col md:flex-row h-auto md:h-[500px] items-stretch">
+      <div class="flex w-full md:w-[50%] px-6 md:pl-20 pt-28 pb-10 md:py-0">
         <div class="max-w-xl flex flex-col justify-center gap-5">
-          <div class="text-4xl font-extrabold text-white">
+          <div class="text-2xl md:text-4xl font-extrabold text-white">
             SELAMATKAN MAKANAN ENAK DI DEKAT MU
           </div>
 
-          <div class="text-lg text-[#A9BDB6]">
+          <div class="text-base md:text-lg text-[#A9BDB6]">
             Temukan dan selamatkan makanan berkualitas dari resto favoritmu sebelum terbuang.
             Lebih murah, lebih ramah lingkungan.
           </div>
 
           <div class="">
             <a
-              class="inline-flex items-center justify-center rounded-full border-2 border-white/30 bg-white/10 px-10 py-4 text-md font-bold text-white backdrop-blur-[6px] cursor-pointer">
+              class="inline-flex items-center justify-center rounded-full border-2 border-white/30 bg-white/10 px-8 md:px-10 py-3 md:py-4 text-sm md:text-md font-bold text-white backdrop-blur-[6px] cursor-pointer">
               Jelajahi Listing
             </a>
           </div>
         </div>
       </div>
 
-      <div class="relative h-full flex-1 overflow-hidden">
-        <div
-          class="h-full w-full overflow-hidden"
-          style="clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);">
+      <div class="hidden md:block relative h-full flex-1 overflow-hidden">
+        <div class="h-full w-full overflow-hidden" style="clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);">
           <img
             src="/images/discover-banner.png"
             class="h-full w-full object-cover object-center"
@@ -38,35 +36,35 @@
 
 <section navbarTheme="light">
   <div class="w-full">
-    <div class="flex flex-row items-center gap-24 px-10 py-5">
-      <div class="flex flex-row items-center gap-3 border border-[#2D6A4F] rounded-[20px] w-xl h-[44px] px-7">
+    <div class="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-24 px-4 md:px-10 py-5">
+      <div class="flex flex-row items-center gap-3 border border-[#2D6A4F] rounded-[20px] w-full md:w-xl h-[44px] px-4 md:px-7">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M16.6 18L10.3 11.7C9.8 12.1 9.225 12.4167 8.575 12.65C7.925 12.8833 7.23333 13 6.5 13C4.68333 13 3.14583 12.3708 1.8875 11.1125C0.629167 9.85417 0 8.31667 0 6.5C0 4.68333 0.629167 3.14583 1.8875 1.8875C3.14583 0.629167 4.68333 0 6.5 0C8.31667 0 9.85417 0.629167 11.1125 1.8875C12.3708 3.14583 13 4.68333 13 6.5C13 7.23333 12.8833 7.925 12.65 8.575C12.4167 9.225 12.1 9.8 11.7 10.3L18 16.6L16.6 18ZM6.5 11C7.75 11 8.8125 10.5625 9.6875 9.6875C10.5625 8.8125 11 7.75 11 6.5C11 5.25 10.5625 4.1875 9.6875 3.3125C8.8125 2.4375 7.75 2 6.5 2C5.25 2 4.1875 2.4375 3.3125 3.3125C2.4375 4.1875 2 5.25 2 6.5C2 7.75 2.4375 8.8125 3.3125 9.6875C4.1875 10.5625 5.25 11 6.5 11Z"
             fill="#707973"/>
         </svg>
-        <input class="text-[#707973] w-xl outline-none bg-transparent" placeholder="Search foods...">
+        <input class="text-[#707973] w-full outline-none bg-transparent" placeholder="Search foods...">
       </div>
 
-      <div class="flex flex-row items-center gap-4">
+      <div class="flex flex-row flex-wrap items-center gap-3 md:gap-4">
         <div (click)="selectCategory('All Items')" 
-             [class]="'flex-none text-base font-semibold font-manrope rounded-full px-8 py-3 cursor-pointer transition-colors duration-150 ' + (selectedFilter() === 'All Items' ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
+             [class]="'flex-none text-sm md:text-base font-semibold font-manrope rounded-full px-5 md:px-8 py-2 md:py-3 cursor-pointer transition-colors duration-150 ' + (selectedFilter() === 'All Items' ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
           All Items
         </div>
         <div (click)="selectCategory('Vegetables')" 
-             [class]="'flex-none text-base font-semibold font-manrope rounded-full px-8 py-3 cursor-pointer transition-colors duration-150 ' + (selectedFilter() === 'Vegetables' ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
+             [class]="'flex-none text-sm md:text-base font-semibold font-manrope rounded-full px-5 md:px-8 py-2 md:py-3 cursor-pointer transition-colors duration-150 ' + (selectedFilter() === 'Vegetables' ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
           Vegetables
         </div>
         <div (click)="selectCategory('Bakery')" 
-             [class]="'flex-none text-base font-semibold font-manrope rounded-full px-8 py-3 cursor-pointer transition-colors duration-150 ' + (selectedFilter() === 'Bakery' ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
+             [class]="'flex-none text-sm md:text-base font-semibold font-manrope rounded-full px-5 md:px-8 py-2 md:py-3 cursor-pointer transition-colors duration-150 ' + (selectedFilter() === 'Bakery' ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
           Bakery
         </div>
         <div (click)="selectCategory('Dairy & Eggs')" 
-             [class]="'flex-none text-base font-semibold font-manrope rounded-full px-8 py-3 cursor-pointer transition-colors duration-150 ' + (selectedFilter() === 'Dairy & Eggs' ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
+             [class]="'flex-none text-sm md:text-base font-semibold font-manrope rounded-full px-5 md:px-8 py-2 md:py-3 cursor-pointer transition-colors duration-150 ' + (selectedFilter() === 'Dairy & Eggs' ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
           Dairy &amp; Eggs
         </div>
         <div (click)="selectCategory('Pantry')" 
-             [class]="'flex-none text-base font-semibold font-manrope rounded-full px-8 py-3 cursor-pointer transition-colors duration-150 ' + (selectedFilter() === 'Pantry' ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
+             [class]="'flex-none text-sm md:text-base font-semibold font-manrope rounded-full px-5 md:px-8 py-2 md:py-3 cursor-pointer transition-colors duration-150 ' + (selectedFilter() === 'Pantry' ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
           Pantry
         </div>
 
@@ -90,12 +88,12 @@
       class="filter-expand-panel"
       [class.filter-expand-panel--open]="isFilterMenuOpen()">
       <div class="overflow-hidden">
-        <div class="flex flex-wrap gap-3 px-10 pb-5">
+        <div class="flex flex-wrap gap-3 px-4 md:px-10 pb-5">
           @for (category of extraCategories; track category) {
             <button
               (click)="selectCategory(category)"
               type="button"
-              [class]="'rounded-full px-5 py-3 text-base font-semibold font-manrope transition-colors duration-150 cursor-pointer ' + (selectedFilter() === category ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
+              [class]="'rounded-full px-5 py-3 text-sm md:text-base font-semibold font-manrope transition-colors duration-150 cursor-pointer ' + (selectedFilter() === category ? 'bg-[#0F5238] text-white' : 'bg-[#E2E3DB] text-[#404943] hover:bg-[#0F5238] hover:text-white')">
               {{ category }}
             </button>
           }
@@ -108,11 +106,11 @@
 </section>
 
 <section navbarTheme="light">
-  <div class="flex flex-col gap-8 p-10 ">
-    <div class="flex flex-row gap-5">
+  <div class="flex flex-col gap-8 px-4 md:p-10 py-6">
+    <div class="flex flex-col md:flex-row gap-5">
       @for (card of featuredFoods(); track $index) {
-        <div class="flex flex-1 overflow-hidden rounded-2xl">
-          <div class="w-[320px] shrink-0">
+        <div class="flex flex-col md:flex-row flex-1 overflow-hidden rounded-2xl">
+          <div class="w-full md:w-[320px] md:shrink-0 h-[200px] md:h-auto">
             <img
               [src]="card.image"
               class="h-full w-full object-cover"
@@ -121,12 +119,12 @@
           </div>
 
           <div class="flex flex-1 flex-col justify-between bg-[#FCFCF8]">
-            <div class="space-y-3 px-6 py-8">
-              <div class="text-2xl font-bold text-[#0F5238]">
+            <div class="space-y-3 px-6 py-6 md:py-8">
+              <div class="text-xl md:text-2xl font-bold text-[#0F5238]">
                 {{ card.title }}
               </div>
 
-              <div class="text-md leading-7 text-[#404943] font-manrope line-clamp-2">
+              <div class="text-sm md:text-md leading-7 text-[#404943] font-manrope line-clamp-2">
                 {{ card.description }}
               </div>
 
@@ -142,7 +140,7 @@
 
               <button
                 [routerLink]="card.route"
-                class="rounded-full bg-[#0F5238] px-8 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
+                class="rounded-full bg-[#0F5238] px-6 md:px-8 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
                 View Details
               </button>
             </div>
@@ -151,16 +149,16 @@
       }
     </div>
 
-    <div class="grid grid-cols-4 gap-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-10">
       @for (card of listingFoods(); track $index) {
-        <div class="flex flex-col overflow-hidden rounded-t-2xl">
+        <div class="flex flex-col overflow-hidden rounded-2xl h-full">
           <img
             [src]="card.image"
-            class="h-[200px] w-full object-cover"
+            class="h-[200px] w-full object-cover shrink-0"
             [alt]="card.alt"
           />
 
-          <div class="flex flex-col justify-between bg-[#D9D9D9]/10 gap-5">
+          <div class="flex flex-col justify-between bg-[#D9D9D9]/10 gap-5 h-full">
             <div class="space-y-3 px-6 py-4">
               <div class="text-xl font-bold text-[#0F5238]">
                 {{ card.title }}
@@ -194,7 +192,7 @@
 
   <div class="flex justify-center my-8 mb-18">
     <button
-      class="inline-flex items-center gap-2 text-white text-lg font-bold font-manrope bg-[#2D6A4F] rounded-4xl px-8 py-4 cursor-pointer hover:bg-[#1f4f39] transition"
+      class="inline-flex items-center gap-2 text-white text-base md:text-lg font-bold font-manrope bg-[#2D6A4F] rounded-4xl px-6 md:px-8 py-3 md:py-4 cursor-pointer hover:bg-[#1f4f39] transition"
     >
       <svg
         width="28"

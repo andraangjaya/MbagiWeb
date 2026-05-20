@@ -29,7 +29,7 @@ export class ProfilePageComponent {
   private foodListingService = inject(FoodListingService);
 
   readonly activeDonations = computed(() =>
-    this.foodListingService.getFeatured(2).map((donation) => ({
+    this.foodListingService.getFeatured(8).map((donation) => ({
       image: donation.image,
       alt: donation.alt,
       title: donation.title,
