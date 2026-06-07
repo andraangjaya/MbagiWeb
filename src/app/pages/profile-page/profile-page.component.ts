@@ -29,7 +29,7 @@ export class ProfilePageComponent {
       title: 'Freshly Baked Bread',
       description: '2kg of strawberries and blueberries.',
       pickupLocation: { latitude: -8.6705, longitude: 115.2126 },
-      route: '/details/1'
+      route: '/food/details/1'
     },
     {
       image: '/images/discover-banner.png',
@@ -37,7 +37,7 @@ export class ProfilePageComponent {
       title: 'Prepared Lunch Boxes',
       description: 'Balanced prepared lunch boxes for same-day collection.',
       pickupLocation: { latitude: -7.2575, longitude: 112.7521 },
-      route: '/details/2'
+      route: '/food/details/2'
     },
     {
       image: '/images/discover-banner.png',
@@ -45,7 +45,7 @@ export class ProfilePageComponent {
       title: 'Fresh Vegetable Bundle',
       description: 'Assorted vegetables packed and ready to claim.',
       pickupLocation: { latitude: -6.9147, longitude: 107.6098 },
-      route: '/details/3'
+      route: '/food/details/3'
     }
   ];
 

@@ -43,6 +43,12 @@ export const routes: Routes = [
 
   {
     path: 'food/details',
+    redirectTo: 'food/details/1',
+    pathMatch: 'full',
+  },
+
+  {
+    path: 'food/details/:foodId',
     loadComponent: () => import('./pages/view-detail-page/view-detail-page.component').then((m) => m.ViewDetailPageComponent),
   },
 

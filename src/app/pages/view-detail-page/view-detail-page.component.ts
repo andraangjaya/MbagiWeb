@@ -1,10 +1,14 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { map } from 'rxjs/operators';
 import { NavbarThemeDirective } from '../../components/navbar/navbar-theme.directive';
-import { GeoPoint, LocationService } from '../../location.service';
+import { LocationService } from '../../location.service';
+import { foodCatalog, getFoodById } from '../../food-catalog';
 
 interface FoodCard {
+  id: string;
   image: string;
   alt: string;
   title: string;
@@ -12,18 +16,6 @@ interface FoodCard {
   distance: string;
   location: string;
   timeOperational: string;
-  route: string;
-}
-
-interface FoodSeed {
-  image: string;
-  alt: string;
-  title: string;
-  description: string;
-  pickupLocation: GeoPoint;
-  location: string;
-  timeOperational: string;
-  route: string;
 }
 
 @Component({
@@ -34,24 +26,16 @@ interface FoodSeed {
   styleUrls: ['./view-detail-page.component.css'],
 })
 export class ViewDetailPageComponent {
+  private route = inject(ActivatedRoute);
   private locationService = inject(LocationService);
-
-  private foodSeeds: FoodSeed[] = [
-    {
-      image: '/images/food-expires.png',
-      alt: 'bakery-leftover',
-      title: 'Artisan Bakery Batch',
-      description:
-        "6 loaves of freshly baked whole grain sourdough from today's unsold bakery stock. Still soft and perfect for shelters or community kitchens.",
-      pickupLocation: { latitude: -8.6705, longitude: 115.2126 },
-      location: 'Renon, Denpasar',
-      timeOperational: '21:20 WIB - 22:40 WIB',
-      route: '',
-    },
-  ];
+  readonly foodId = toSignal(
+    this.route.paramMap.pipe(map((params) => params.get('foodId'))),
+    { initialValue: this.route.snapshot.paramMap.get('foodId') }
+  );
 
   readonly foods = computed<FoodCard[]>(() =>
-    this.foodSeeds.map((food) => ({
+    foodCatalog.map((food) => ({
+      id: food.id,
       image: food.image,
       alt: food.alt,
       title: food.title,
@@ -59,9 +43,13 @@ export class ViewDetailPageComponent {
       distance: this.locationService.formatDistance(food.pickupLocation),
       location: food.location,
       timeOperational: food.timeOperational,
-      route: food.route,
     }))
   );
 
-  readonly listingFoods = computed(() => this.foods());
+  readonly selectedFood = computed(() => getFoodById(this.foodId()) ?? this.foods()[0]);
+  readonly listingFoods = computed(() => this.foods().filter((food) => food.id !== this.selectedFood()?.id));
+
+  trackFoodById(_: number, food: FoodCard): string {
+    return food.id;
+  }
 }

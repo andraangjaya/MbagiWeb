@@ -105,8 +105,8 @@
 
 <section navbarTheme="light">
   <div class="flex flex-col gap-8 p-10 ">
-    <div class="flex flex-row gap-5">
-      @for (card of featuredFoods(); track $index) {
+      <div class="flex flex-row gap-5">
+      @for (card of featuredFoods(); track card.id) {
         <div class="flex flex-1 overflow-hidden rounded-2xl">
           <div class="w-[320px] shrink-0">
             <img
@@ -137,7 +137,7 @@
               </div>
 
               <button
-                [routerLink]="card.route"
+                [routerLink]="['/food/details', card.id]"
                 class="rounded-full bg-[#0F5238] px-8 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
                 View Details
               </button>
@@ -148,7 +148,7 @@
     </div>
 
     <div class="grid grid-cols-4 gap-10">
-      @for (card of listingFoods(); track $index) {
+      @for (card of listingFoods(); track card.id) {
         <div class="flex flex-col overflow-hidden rounded-t-2xl">
           <img
             [src]="card.image"
@@ -177,7 +177,7 @@
               </div>
 
               <button
-                [routerLink]="card.route"
+                [routerLink]="['/food/details', card.id]"
                 class="rounded-full bg-[#0F5238] px-6 py-3 text-sm font-semibold text-white font-manrope transition hover:scale-105">
                 View Details
               </button>
